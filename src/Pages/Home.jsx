@@ -190,152 +190,152 @@ const Home = () => {
       </section>
 
       {/* Enhanced Products Section */}
-      <section id="products" className="py-24 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-white to-gray-50"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Our Products</h2>
-            <div className="w-24 h-1.5 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full"></div>
-            <p className="text-xl text-gray-600 mt-6 max-w-2xl mx-auto">
-              Reinforced precast concrete products for infrastructure development and construction management
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-                title: "Concrete Pipes",
-                description: "Premium quality reinforced concrete pipes with high tensile strength and durability for drainage and sewage systems.",
-                borderColor: "border-blue-700",
-                bgColor: "bg-blue-100",
-                specs: ["Various diameters", "Reinforced construction", "Corrosion resistant"]
-              },
-              {
-                image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-                title: "Precast Slabs & Panels",
-                description: "Structural precast elements with excellent load-bearing capacity and seismic resistance for modern construction.",
-                borderColor: "border-orange-500",
-                bgColor: "bg-orange-100",
-                specs: ["High strength", "Quick installation", "Seismic resistant"]
-              },
-              {
-                image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-                title: "Manhole Covers & Frames",
-                description: "Durable precast manhole components with high strength and corrosion resistance for urban infrastructure.",
-                borderColor: "border-blue-700",
-                bgColor: "bg-blue-100",
-                specs: ["Heavy duty", "Weather proof", "Long lasting"]
-              },
-              {
-                image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-                title: "Boundary Walls",
-                description: "Precast boundary walls and fencing solutions offering security, durability, and quick installation.",
-                borderColor: "border-orange-500",
-                bgColor: "bg-orange-100",
-                specs: ["Modular design", "Easy installation", "Low maintenance"]
-              },
-              {
-                image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-                title: "Culverts & Bridges",
-                description: "Heavy-duty precast culverts and bridge components designed for infrastructure and transportation projects.",
-                borderColor: "border-blue-700",
-                bgColor: "bg-blue-100",
-                specs: ["Load bearing", "Durable", "Custom sizes"]
-              },
-              {
-                image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-                title: "Custom Solutions",
-                description: "Tailored precast concrete products designed to meet specific project requirements and specifications.",
-                borderColor: "border-orange-500",
-                bgColor: "bg-orange-100",
-                specs: ["Bespoke designs", "Project specific", "Quality assured"]
-              }
-            ].map((product, index) => (
-              <div 
-                key={index}
-                className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-t-4 hover:-translate-y-2 transform overflow-hidden"
-                style={{ borderTopColor: product.borderColor.replace('border-', '') }}
-              >
-                {/* Product Image */}
-                <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={product.image} 
-                    alt={product.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                  <div className="absolute top-4 right-4">
-                    <div className={`w-12 h-12 ${product.bgColor} rounded-xl flex items-center justify-center backdrop-blur-sm`}>
-                      {product.borderColor === "border-blue-700" ? (
-                        <svg className="w-6 h-6 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                        </svg>
-                      ) : (
-                        <svg className="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                      )}
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Product Content */}
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-3 group-hover:text-blue-700 transition-colors duration-300">
-                    {product.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed mb-4">
-                    {product.description}
-                  </p>
-                  
-                  {/* Product Specifications */}
-                  <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-gray-500 mb-2">KEY FEATURES:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {product.specs.map((spec, specIndex) => (
-                        <span 
-                          key={specIndex}
-                          className={`text-xs px-3 py-1 rounded-full ${
-                            product.borderColor === "border-blue-700" 
-                              ? 'bg-blue-100 text-blue-700' 
-                              : 'bg-orange-100 text-orange-700'
-                          } font-medium`}
-                        >
-                          {spec}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  {/* CTA Button */}
-                  <button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white py-3 px-6 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center group/btn">
-                    <span>View Product Details</span>
-                    <svg className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </button>
-                </div>
+     <section id="products" className="py-24 bg-white relative overflow-hidden">
+  <div className="absolute inset-0 bg-gradient-to-b from-white to-gray-50"></div>
+  <div className="container mx-auto px-4 relative z-10">
+    <div className="text-center mb-20">
+      <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Our Products</h2>
+      <div className="w-24 h-1.5 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full"></div>
+      <p className="text-xl text-gray-600 mt-6 max-w-2xl mx-auto">
+        Reinforced precast concrete products for infrastructure development and construction management
+      </p>
+    </div>
+    
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {[
+        {
+          image: "https://5.imimg.com/data5/SELLER/Default/2021/12/EN/CP/SP/2555778/banner-500x500.jpg",
+          title: "Concrete Pipes",
+          description: "Premium quality reinforced concrete pipes with high tensile strength and durability for drainage and sewage systems.",
+          borderColor: "border-blue-700",
+          bgColor: "bg-blue-100",
+          specs: ["Various diameters", "Reinforced construction", "Corrosion resistant"]
+        },
+        {
+          image: "https://www.brhcpipes.com/blog/brhc%20rcc%20pipe%20(4).jpg",
+          title: "Precast Slabs & Panels",
+          description: "Structural precast elements with excellent load-bearing capacity and seismic resistance for modern construction.",
+          borderColor: "border-orange-500",
+          bgColor: "bg-orange-100",
+          specs: ["High strength", "Quick installation", "Seismic resistant"]
+        },
+        {
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4306PTk8QKVeZ0Sy3p_4V51ut4pmguaCf5ylZ7kZzNcLnQNDA3Khl_bGmUoz8R8HeWOU&usqp=CAU",
+          title: "Manhole Covers & Frames",
+          description: "Durable precast manhole components with high strength and corrosion resistance for urban infrastructure.",
+          borderColor: "border-blue-700",
+          bgColor: "bg-blue-100",
+          specs: ["Heavy duty", "Weather proof", "Long lasting"]
+        },
+        {
+          image: "https://5.imimg.com/data5/SELLER/Default/2021/12/EN/CP/SP/2555778/banner-500x500.jpg",
+          title: "Boundary Walls",
+          description: "Precast boundary walls and fencing solutions offering security, durability, and quick installation.",
+          borderColor: "border-orange-500",
+          bgColor: "bg-orange-100",
+          specs: ["Modular design", "Easy installation", "Low maintenance"]
+        },
+        {
+          image: "https://www.brhcpipes.com/blog/brhc%20rcc%20pipe%20(4).jpg",
+          title: "Culverts & Bridges",
+          description: "Heavy-duty precast culverts and bridge components designed for infrastructure and transportation projects.",
+          borderColor: "border-blue-700",
+          bgColor: "bg-blue-100",
+          specs: ["Load bearing", "Durable", "Custom sizes"]
+        },
+        {
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4306PTk8QKVeZ0Sy3p_4V51ut4pmguaCf5ylZ7kZzNcLnQNDA3Khl_bGmUoz8R8HeWOU&usqp=CAU",
+          title: "Custom Solutions",
+          description: "Tailored precast concrete products designed to meet specific project requirements and specifications.",
+          borderColor: "border-orange-500",
+          bgColor: "bg-orange-100",
+          specs: ["Bespoke designs", "Project specific", "Quality assured"]
+        }
+      ].map((product, index) => (
+        <div 
+          key={index}
+          className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-t-4 hover:-translate-y-2 transform overflow-hidden"
+          style={{ borderTopColor: product.borderColor.replace('border-', '') }}
+        >
+          {/* Product Image */}
+          <div className="relative h-48 overflow-hidden">
+            <img 
+              src={product.image} 
+              alt={product.title}
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            <div className="absolute top-4 right-4">
+              <div className={`w-12 h-12 ${product.bgColor} rounded-xl flex items-center justify-center backdrop-blur-sm`}>
+                {product.borderColor === "border-blue-700" ? (
+                  <svg className="w-6 h-6 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                ) : (
+                  <svg className="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                )}
               </div>
-            ))}
-          </div>
-
-          {/* Additional Call-to-Action */}
-          <div className="text-center mt-16">
-            <div className="bg-gradient-to-r from-blue-50 to-orange-50 rounded-2xl p-8 border border-gray-200">
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-                Need Custom Precast Solutions?
-              </h3>
-              <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-                We specialize in manufacturing bespoke precast concrete products tailored to your specific project requirements.
-              </p>
-              <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                Request Custom Quote
-              </button>
             </div>
           </div>
+          
+          {/* Product Content */}
+          <div className="p-6">
+            <h3 className="text-2xl font-bold text-gray-800 mb-3 group-hover:text-blue-700 transition-colors duration-300">
+              {product.title}
+            </h3>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              {product.description}
+            </p>
+            
+            {/* Product Specifications */}
+            <div className="mb-6">
+              <h4 className="text-sm font-semibold text-gray-500 mb-2">KEY FEATURES:</h4>
+              <div className="flex flex-wrap gap-2">
+                {product.specs.map((spec, specIndex) => (
+                  <span 
+                    key={specIndex}
+                    className={`text-xs px-3 py-1 rounded-full ${
+                      product.borderColor === "border-blue-700" 
+                        ? 'bg-blue-100 text-blue-700' 
+                        : 'bg-orange-100 text-orange-700'
+                    } font-medium`}
+                  >
+                    {spec}
+                  </span>
+                ))}
+              </div>
+            </div>
+            
+            {/* CTA Button */}
+            <button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white py-3 px-6 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center group/btn">
+              <span>View Product Details</span>
+              <svg className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
         </div>
-      </section>
+      ))}
+    </div>
+
+    {/* Additional Call-to-Action */}
+    <div className="text-center mt-16">
+      <div className="bg-gradient-to-r from-blue-50 to-orange-50 rounded-2xl p-8 border border-gray-200">
+        <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+          Need Custom Precast Solutions?
+        </h3>
+        <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+          We specialize in manufacturing bespoke precast concrete products tailored to your specific project requirements.
+        </p>
+        <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+          Request Custom Quote
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Enhanced Applications Section */}
       <section id="applications" className="py-24 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
