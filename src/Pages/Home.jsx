@@ -34,7 +34,7 @@ const Home = () => {
               }`}
               style={{ backgroundImage: `url("${image}")` }}
             >
-              <div className="absolute inset-0 bg-blue-900/70 mix-blend-multiply"></div>
+              <div className="absolute inset-0 bg-white-900/70 mix-blend-multiply"></div>
             </div>
           ))}
         </div>
