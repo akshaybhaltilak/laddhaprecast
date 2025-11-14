@@ -1,541 +1,341 @@
-import React, { useState, useEffect } from 'react'
-import ContactForm from '../Components/ContactForm'
+import React, { useState, useEffect } from 'react';
+
+// Import the products data from Products component
+const productsData = [
+  {
+    image: "https://www.brhcpipes.com/product/BRHC.products.logo.1.RCCPipes.jpg",
+    title: "RCC Pipes",
+    description: "High-strength reinforced concrete pipes for drainage and sewage systems with excellent durability.",
+    borderColor: "border-blue-600",
+    bgColor: "bg-blue-100",
+    specs: ["Various diameters", "High strength", "Corrosion resistant"]
+  },
+  {
+    image: "https://artoprecast.in/assets/img/products/U-Drains/main.png",
+    title: "Precast U Drain",
+    description: "U-shaped drainage channels for optimal water flow and easy installation in various applications.",
+    borderColor: "border-orange-500",
+    bgColor: "bg-orange-100",
+    specs: ["Optimal flow", "Easy installation", "Durable construction"]
+  },
+  {
+    image: "https://civilcast.com.au/wp-content/uploads/Box-Culverts1.jpg",
+    title: "Box Culvert",
+    description: "Structural box culverts for efficient water passage under infrastructure projects.",
+    borderColor: "border-blue-600",
+    bgColor: "bg-blue-100",
+    specs: ["Heavy duty", "Structural integrity", "Custom sizes"]
+  },
+  {
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjdqLIW0xaQUb4-Z_rVRlq0E-Ini2BosH1bg&s",
+    title: "Jacking Pipes",
+    description: "Specialized pipes for pipe jacking and microtunneling applications with precision engineering.",
+    borderColor: "border-orange-500",
+    bgColor: "bg-orange-100",
+    specs: ["Pipe jacking", "Microtunneling", "Reinforced"]
+  },
+  {
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIIOG_v9WL-xnNppsl1nYrCabPF1fa6M0KHQ&s",
+    title: "HDPE Lining Pipes",
+    description: "Concrete pipes with HDPE lining for enhanced corrosion resistance and longevity.",
+    borderColor: "border-blue-600",
+    bgColor: "bg-blue-100",
+    specs: ["HDPE lining", "Corrosion proof", "Extended lifespan"]
+  },
+  {
+    image: "https://www.brhcpipes.com/product/BRHC_25.products.2.RCCManholeSystem.1.circular.jpg",
+    title: "Precast Manholes",
+    description: "Complete precast manhole systems for urban infrastructure with heavy-duty construction.",
+    borderColor: "border-orange-500",
+    bgColor: "bg-orange-100",
+    specs: ["Complete systems", "Weather proof", "Easy access"]
+  },
+  {
+    image: "https://images.jdmagicbox.com/comp/pune/p5/020pxx20.xx20.190313153755.n5p5/catalogue/kalokhe-pipes-and-precast-industries-talegaon-dabhade-pune-rcc-pipe-dealers-qpw9nxb1mw.jpg",
+    title: "Customized Products",
+    description: "Tailored precast concrete solutions designed for specific project requirements.",
+    borderColor: "border-blue-600",
+    bgColor: "bg-blue-100",
+    specs: ["Bespoke designs", "Project specific", "Quality assured"]
+  }
+];
 
 const Home = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   const heroImages = [
-    "https://5.imimg.com/data5/SELLER/Default/2021/12/EN/CP/SP/2555778/banner-500x500.jpg",
-    "https://www.brhcpipes.com/blog/brhc%20rcc%20pipe%20(4).jpg",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4306PTk8QKVeZ0Sy3p_4V51ut4pmguaCf5ylZ7kZzNcLnQNDA3Khl_bGmUoz8R8HeWOU&usqp=CAU"
+    "https://media.istockphoto.com/id/618225484/photo/stack-of-concrete-drainage-pipes-for-wells-and-water-discharges.jpg?s=2048x2048&w=is&k=20&c=OgevDnJQ2z85TlIDNhLdKS-Vs-BOGL1vdkiln3BTiPQ=",
+    "https://media.istockphoto.com/id/845506412/photo/asbestos-cement-pipes.jpg?s=2048x2048&w=is&k=20&c=bGeEWSFwTuarB-XX-FgQT-PSz0jv6C96_dF5BYm7lL8=",
+    "https://media.istockphoto.com/id/872309564/photo/large-concrete-pipe-stacked-in-the-open-for-storage-for-big-construction.jpg?s=2048x2048&w=is&k=20&c=C3UFJzFmMZBFGkafBVuHmgJVpEoRM_v22dLToWPejtg="
   ];
+
+  // Use first 3 products as featured products
+  const featuredProducts = productsData.slice(0, 3).map(product => ({
+    name: product.title,
+    description: product.description,
+    features: product.specs,
+    image: product.image
+  }));
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => 
         prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1
       );
-    }, 2000); // Change image every 2 seconds
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Simplified Hero Section with Image Carousel */}
-      <section id="home" className="relative bg-gray-900 text-white py-20 md:py-32 overflow-hidden">
-        {/* Background Image Carousel */}
+      {/* Hero Section */}
+      <section id="home" className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white min-h-screen flex items-center overflow-hidden">
+        {/* Background Image Carousel with Enhanced Overlay */}
         <div className="absolute inset-0 z-0">
           {heroImages.map((image, index) => (
             <div
               key={index}
-              className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
-                index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+              className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-1000 ${
+                index === currentImageIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
               }`}
               style={{ backgroundImage: `url("${image}")` }}
             >
-              <div className="absolute inset-0 bg-white-900/70 mix-blend-multiply"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-900/80 to-orange-900/70"></div>
             </div>
           ))}
         </div>
-        
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="max-w-4xl mx-auto">
-            {/* Trust Badge */}
-            <div className="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6 border border-white/30">
-              <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
-              <span className="text-sm font-medium">Trusted by 500+ Construction Companies</span>
-            </div>
-            
-            {/* Main Heading */}
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Laddha Precast
-              <span className="block text-orange-400 mt-2">Concrete Solutions</span>
-            </h1>
-            
-            {/* Subtitle */}
-            <p className="text-lg md:text-xl mb-8 opacity-95 max-w-2xl mx-auto">
-              Premium quality reinforced concrete pipes and precast products for all your construction needs
-            </p>
 
-            {/* Simple Stats */}
-            <div className="flex justify-center items-center space-x-6 mb-8">
-              <div className="text-center">
-                <div className="text-xl md:text-2xl font-bold text-orange-400">12+</div>
-                <div className="text-xs opacity-90">Years Experience</div>
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-orange-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        </div>
+        
+        <div className="container mx-auto px-4 py-20 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left Content */}
+              <div className="text-center lg:text-left">
+                {/* Main Heading with Animation */}
+                <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                  <span className="block text-white">Laddha Precast</span>
+                  <span className="block bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent mt-2">
+                    Industries
+                  </span>
+                </h1>
+                
+                {/* Subtitle */}
+                <p className="text-lg md:text-xl mb-8 text-gray-300 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                  Premium quality reinforced concrete pipes, precast slabs, and construction solutions engineered for durability, strength, and excellence in every project.
+                </p>
+
+                {/* Feature Pills */}
+                <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
+                  <div className="px-4 py-2 bg-gray-800/50 backdrop-blur-sm rounded-full border border-orange-500/30 text-sm font-medium flex items-center">
+                    <svg className="w-4 h-4 mr-2 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    ISO Certified
+                  </div>
+                  <div className="px-4 py-2 bg-gray-800/50 backdrop-blur-sm rounded-full border border-orange-500/30 text-sm font-medium flex items-center">
+                    <svg className="w-4 h-4 mr-2 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    Premium Quality
+                  </div>
+                  <div className="px-4 py-2 bg-gray-800/50 backdrop-blur-sm rounded-full border border-orange-500/30 text-sm font-medium flex items-center">
+                    <svg className="w-4 h-4 mr-2 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    Fast Delivery
+                  </div>
+                </div>
+                
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                  <a 
+                    href="#featured-products"
+                    className="group bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl shadow-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/50 flex items-center justify-center"
+                  >
+                    <span>Explore Products</span>
+                    <svg className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                  <a
+                    href="/contact"
+                    className="group bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:bg-white hover:text-gray-900 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+                  >
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                    </svg>
+                    <span>Request Quote</span>
+                  </a>
+                </div>
               </div>
-              <div className="w-px h-6 bg-white/30"></div>
-              <div className="text-center">
-                <div className="text-xl md:text-2xl font-bold text-orange-400">500+</div>
-                <div className="text-xs opacity-90">Clients</div>
-              </div>
-              <div className="w-px h-6 bg-white/30"></div>
-              <div className="text-center">
-                <div className="text-xl md:text-2xl font-bold text-orange-400">1000+</div>
-                <div className="text-xs opacity-90">Projects</div>
+
+              {/* Right Content - Product Highlights */}
+              <div className="grid grid-cols-1 gap-6">
+                {featuredProducts.map((product, index) => (
+                  <div 
+                    key={index}
+                    className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:border-orange-500/50 group"
+                  >
+                    <div className="flex items-start space-x-4">
+                      <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-orange-400 transition-colors duration-300">
+                          {product.name}
+                        </h3>
+                        <p className="text-gray-300 text-sm leading-relaxed">
+                          {product.description}
+                        </p>
+                        <div className="flex flex-wrap gap-2 mt-3">
+                          {product.features.slice(0, 2).map((feature, featureIndex) => (
+                            <span 
+                              key={featureIndex}
+                              className="px-2 py-1 bg-orange-500/20 text-orange-300 rounded-full text-xs font-medium"
+                            >
+                              {feature}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-            
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
-              <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center">
-                <span>View Products</span>
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </button>
-              <button className="border-2 border-white hover:bg-white hover:text-blue-900 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center">
-                <span>Get Quote</span>
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                </svg>
-              </button>
-            </div>
-            
+
             {/* Image Indicators */}
-            <div className="flex justify-center space-x-2 mt-8">
+            <div className="flex justify-center lg:justify-start space-x-3 mt-12">
               {heroImages.map((_, index) => (
                 <button
                   key={index}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentImageIndex ? 'bg-orange-400' : 'bg-white/50'
+                  className={`h-1 rounded-full transition-all duration-500 ${
+                    index === currentImageIndex 
+                      ? 'w-12 bg-gradient-to-r from-orange-400 to-orange-600' 
+                      : 'w-8 bg-white/30 hover:bg-white/50'
                   }`}
                   onClick={() => setCurrentImageIndex(index)}
+                  aria-label={`Go to slide ${index + 1}`}
                 />
               ))}
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Enhanced About Section */}
-      <section id="about" className="py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute top-0 right-0 w-72 h-72 bg-orange-100 rounded-full -translate-y-36 translate-x-36 opacity-50"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-100 rounded-full translate-y-48 -translate-x-48 opacity-30"></div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">About Laddha Precast</h2>
-            <div className="w-24 h-1.5 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full"></div>
-            <p className="text-xl text-gray-600 mt-6 max-w-2xl mx-auto">
-              Supreme manufacturer of concrete pipes and precast concrete products since 2012
-            </p>
-          </div>
-          
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-                <div className="flex items-start space-x-4">
-                  <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <span className="text-white text-2xl font-bold">L</span>
-                  </div>
-                  <div>
-                    <h4 className="text-2xl font-bold text-gray-800 mb-2">Laddha Group</h4>
-                    <p className="text-orange-600 font-semibold mb-3">Founder & Visionary</p>
-                    <p className="text-gray-700 leading-relaxed">
-                      With over 12 years in precast concrete manufacturing, Laddha Group leads our strategic vision 
-                      and drives business growth through innovative solutions and industry expertise.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-                <div className="flex items-start space-x-4">
-                  <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <span className="text-white text-2xl font-bold">T</span>
-                  </div>
-                  <div>
-                    <h4 className="text-2xl font-bold text-gray-800 mb-2">Technical Team</h4>
-                    <p className="text-blue-600 font-semibold mb-3">Engineering Excellence</p>
-                    <p className="text-gray-700 leading-relaxed">
-                      Our expert engineers ensure superior quality control, innovative product development, 
-                      and maintain our commitment to international standards and customer satisfaction.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-white/90 backdrop-blur-sm p-10 rounded-2xl shadow-2xl border border-gray-100">
-              <h3 className="text-3xl font-bold text-gray-800 mb-8">Our Mission & Vision</h3>
-              <p className="text-gray-700 text-lg leading-relaxed mb-8">
-                At Laddha Precast, we're committed to delivering premium quality precast concrete solutions 
-                with <span className="font-semibold text-orange-600">high tensile strength, sturdiness, and ductility</span>. 
-                We envision being the supreme manufacturer of concrete pipes and precast products for infrastructure development.
-              </p>
-              
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center p-6 bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl border border-orange-200">
-                  <div className="text-3xl font-bold text-orange-600 mb-2">12+</div>
-                  <div className="text-gray-700 font-medium">Years Experience</div>
-                </div>
-                <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl border border-blue-200">
-                  <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
-                  <div className="text-gray-700 font-medium">Clients Served</div>
-                </div>
-                <div className="text-center p-6 bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl border border-orange-200">
-                  <div className="text-3xl font-bold text-orange-600 mb-2">1000+</div>
-                  <div className="text-gray-700 font-medium">Projects Completed</div>
-                </div>
-                <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl border border-blue-200">
-                  <div className="text-3xl font-bold text-blue-600 mb-2">50+</div>
-                  <div className="text-gray-700 font-medium">Product Variants</div>
-                </div>
-              </div>
-            </div>
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+          <div className="flex flex-col items-center text-white/60">
+            <span className="text-xs font-medium mb-2">Scroll Down</span>
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
           </div>
         </div>
       </section>
 
-      {/* Enhanced Products Section */}
-     <section id="products" className="py-24 bg-white relative overflow-hidden">
-  <div className="absolute inset-0 bg-gradient-to-b from-white to-gray-50"></div>
-  <div className="container mx-auto px-4 relative z-10">
-    <div className="text-center mb-20">
-      <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Our Products</h2>
-      <div className="w-24 h-1.5 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full"></div>
-      <p className="text-xl text-gray-600 mt-6 max-w-2xl mx-auto">
-        Reinforced precast concrete products for infrastructure development and construction management
-      </p>
-    </div>
-    
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {[
-        {
-          image: "https://5.imimg.com/data5/SELLER/Default/2021/12/EN/CP/SP/2555778/banner-500x500.jpg",
-          title: "Concrete Pipes",
-          description: "Premium quality reinforced concrete pipes with high tensile strength and durability for drainage and sewage systems.",
-          borderColor: "border-blue-700",
-          bgColor: "bg-blue-100",
-          specs: ["Various diameters", "Reinforced construction", "Corrosion resistant"]
-        },
-        {
-          image: "https://www.brhcpipes.com/blog/brhc%20rcc%20pipe%20(4).jpg",
-          title: "Precast Slabs & Panels",
-          description: "Structural precast elements with excellent load-bearing capacity and seismic resistance for modern construction.",
-          borderColor: "border-orange-500",
-          bgColor: "bg-orange-100",
-          specs: ["High strength", "Quick installation", "Seismic resistant"]
-        },
-        {
-          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4306PTk8QKVeZ0Sy3p_4V51ut4pmguaCf5ylZ7kZzNcLnQNDA3Khl_bGmUoz8R8HeWOU&usqp=CAU",
-          title: "Manhole Covers & Frames",
-          description: "Durable precast manhole components with high strength and corrosion resistance for urban infrastructure.",
-          borderColor: "border-blue-700",
-          bgColor: "bg-blue-100",
-          specs: ["Heavy duty", "Weather proof", "Long lasting"]
-        },
-        {
-          image: "https://5.imimg.com/data5/SELLER/Default/2021/12/EN/CP/SP/2555778/banner-500x500.jpg",
-          title: "Boundary Walls",
-          description: "Precast boundary walls and fencing solutions offering security, durability, and quick installation.",
-          borderColor: "border-orange-500",
-          bgColor: "bg-orange-100",
-          specs: ["Modular design", "Easy installation", "Low maintenance"]
-        },
-        {
-          image: "https://www.brhcpipes.com/blog/brhc%20rcc%20pipe%20(4).jpg",
-          title: "Culverts & Bridges",
-          description: "Heavy-duty precast culverts and bridge components designed for infrastructure and transportation projects.",
-          borderColor: "border-blue-700",
-          bgColor: "bg-blue-100",
-          specs: ["Load bearing", "Durable", "Custom sizes"]
-        },
-        {
-          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4306PTk8QKVeZ0Sy3p_4V51ut4pmguaCf5ylZ7kZzNcLnQNDA3Khl_bGmUoz8R8HeWOU&usqp=CAU",
-          title: "Custom Solutions",
-          description: "Tailored precast concrete products designed to meet specific project requirements and specifications.",
-          borderColor: "border-orange-500",
-          bgColor: "bg-orange-100",
-          specs: ["Bespoke designs", "Project specific", "Quality assured"]
-        }
-      ].map((product, index) => (
-        <div 
-          key={index}
-          className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-t-4 hover:-translate-y-2 transform overflow-hidden"
-          style={{ borderTopColor: product.borderColor.replace('border-', '') }}
-        >
-          {/* Product Image */}
-          <div className="relative h-48 overflow-hidden">
-            <img 
-              src={product.image} 
-              alt={product.title}
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-            <div className="absolute top-4 right-4">
-              <div className={`w-12 h-12 ${product.bgColor} rounded-xl flex items-center justify-center backdrop-blur-sm`}>
-                {product.borderColor === "border-blue-700" ? (
-                  <svg className="w-6 h-6 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                ) : (
-                  <svg className="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                )}
-              </div>
-            </div>
-          </div>
-          
-          {/* Product Content */}
-          <div className="p-6">
-            <h3 className="text-2xl font-bold text-gray-800 mb-3 group-hover:text-blue-700 transition-colors duration-300">
-              {product.title}
-            </h3>
-            <p className="text-gray-600 leading-relaxed mb-4">
-              {product.description}
-            </p>
-            
-            {/* Product Specifications */}
-            <div className="mb-6">
-              <h4 className="text-sm font-semibold text-gray-500 mb-2">KEY FEATURES:</h4>
-              <div className="flex flex-wrap gap-2">
-                {product.specs.map((spec, specIndex) => (
-                  <span 
-                    key={specIndex}
-                    className={`text-xs px-3 py-1 rounded-full ${
-                      product.borderColor === "border-blue-700" 
-                        ? 'bg-blue-100 text-blue-700' 
-                        : 'bg-orange-100 text-orange-700'
-                    } font-medium`}
-                  >
-                    {spec}
-                  </span>
-                ))}
-              </div>
-            </div>
-            
-            {/* CTA Button */}
-            <button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white py-3 px-6 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center group/btn">
-              <span>View Product Details</span>
-              <svg className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      ))}
-    </div>
-
-    {/* Additional Call-to-Action */}
-    <div className="text-center mt-16">
-      <div className="bg-gradient-to-r from-blue-50 to-orange-50 rounded-2xl p-8 border border-gray-200">
-        <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-          Need Custom Precast Solutions?
-        </h3>
-        <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-          We specialize in manufacturing bespoke precast concrete products tailored to your specific project requirements.
-        </p>
-        <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-          Request Custom Quote
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
-
-      {/* Enhanced Applications Section */}
-      <section id="applications" className="py-24 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
+      {/* Featured Products Section */}
+      <section id="featured-products" className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Applications</h2>
-            <div className="w-24 h-1.5 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full"></div>
-            <p className="text-xl text-gray-600 mt-6 max-w-2xl mx-auto">
-              Our precast concrete products serve various sectors of infrastructure, construction and landscaping industry
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+              Our <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Featured Products</span>
+            </h2>
+            <div className="w-24 h-1.5 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full mb-6"></div>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Discover our range of high-quality precast concrete products designed for modern construction needs
             </p>
           </div>
-          
-          <div className="grid lg:grid-cols-2 gap-8">
-            {[
-              {
-                title: "Infrastructure Development",
-                description: "Our reinforced precast concrete products are extensively used in national highways, bridges, tunnels, and urban infrastructure projects owing to their high tensile strength and durability.",
-                features: ["Road Construction", "Bridge Components", "Tunnel Linings", "Retaining Walls"]
-              },
-              {
-                title: "Urban Development",
-                description: "Precast solutions for smart cities including drainage systems, sewage networks, manholes, and utility tunnels that ensure long-term reliability and minimal maintenance.",
-                features: ["Drainage Systems", "Sewage Networks", "Utility Tunnels", "Public Works"]
-              },
-              {
-                title: "Industrial Construction",
-                description: "Heavy-duty precast elements for industrial plants, warehouses, and manufacturing facilities that require robust structural components and quick installation.",
-                features: ["Factory Buildings", "Warehouses", "Industrial Floors", "Loading Docks"]
-              },
-              {
-                title: "Commercial & Residential",
-                description: "Architectural precast components for modern buildings offering aesthetic appeal, structural integrity, and faster project completion timelines.",
-                features: ["Building Facades", "Parking Structures", "Boundary Walls", "Landscaping"]
-              }
-            ].map((application, index) => (
-              <div 
-                key={index}
-                className="bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
-              >
-                <h3 className="text-2xl font-bold text-blue-700 mb-4">{application.title}</h3>
-                
-                <p className="text-gray-700 mb-6 leading-relaxed">{application.description}</p>
-                
-                <div className="grid grid-cols-2 gap-3">
-                  {application.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center text-gray-700">
-                      <svg className="w-4 h-4 mr-2 text-orange-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Enhanced Clients Section */}
-      <section id="clients" className="py-24 bg-white relative overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Our Clients</h2>
-            <div className="w-24 h-1.5 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full"></div>
-            <p className="text-xl text-gray-600 mt-6 max-w-2xl mx-auto">
-              Trusted by leading construction companies and government agencies across the region
-            </p>
-          </div>
-          
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Government Infrastructure Projects",
-                projects: "National Highways, Urban Development, Public Works",
-                satisfaction: "100% Quality Compliance"
-              },
-              {
-                name: "Private Construction Giants",
-                projects: "Commercial Complexes, Residential Townships, Industrial Parks",
-                satisfaction: "95% Repeat Business"
-              },
-              {
-                name: "Municipal Corporations",
-                projects: "Drainage Systems, Sewage Networks, Public Utilities",
-                satisfaction: "98% On-time Delivery"
-              },
-              {
-                name: "Real Estate Developers",
-                projects: "High-rise Buildings, Township Projects, Commercial Spaces",
-                satisfaction: "100+ Projects Completed"
-              },
-              {
-                name: "Industrial Plants",
-                projects: "Manufacturing Units, Warehouses, Factory Buildings",
-                satisfaction: "Custom Solutions Delivered"
-              },
-              {
-                name: "Infrastructure Contractors",
-                projects: "Bridge Construction, Road Projects, Tunnel Works",
-                satisfaction: "500+ Clients Served"
-              }
-            ].map((client, index) => (
+            {featuredProducts.map((product, index) => (
               <div 
                 key={index}
-                className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-orange-200 overflow-hidden"
               >
-                <h3 className="text-xl font-bold text-blue-800 mb-4">{client.name}</h3>
-                
-                <div className="mb-4">
-                  <div className="text-sm text-gray-600 mb-2">Projects:</div>
-                  <div className="text-gray-700 font-medium">{client.projects}</div>
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={product.image} 
+                    alt={product.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  <div className="absolute top-4 right-4">
+                    <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center backdrop-blur-sm">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
                 
-                <div className="flex items-center text-green-600 font-semibold">
-                  <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  {client.satisfaction}
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold text-gray-800 mb-3 group-hover:text-orange-600 transition-colors duration-300">
+                    {product.name}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed mb-4">
+                    {product.description}
+                  </p>
+                  
+                  <div className="mb-6">
+                    <h4 className="text-sm font-semibold text-gray-500 mb-3">KEY FEATURES:</h4>
+                    <div className="space-y-2">
+                      {product.features.map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-center text-gray-700">
+                          <svg className="w-4 h-4 mr-3 text-orange-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-sm">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <a 
+                    href="/products"
+                    className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-3 px-6 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center group/btn shadow-lg shadow-orange-500/30"
+                  >
+                    <span>View Details</span>
+                    <svg className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
                 </div>
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Enhanced Contact Section */}
-      <section id="contact" className="py-24 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Get In Touch</h2>
-            <div className="w-24 h-1.5 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full"></div>
-            <p className="text-xl text-gray-600 mt-6 max-w-2xl mx-auto">
-              Ready to discuss your precast concrete requirements? Contact us today for a free consultation
-            </p>
-          </div>
-          
-          <div className="grid lg:grid-cols-2 gap-16">
-            <div>
-              <h3 className="text-3xl font-bold text-blue-800 mb-8">Let's Build Together</h3>
-              
-              <div className="space-y-8">
-                {[
-                  {
-                    icon: (
-                      <svg className="w-6 h-6 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
-                    ),
-                    title: "Phone",
-                    content: "+91 XXXXX XXXXX",
-                    subcontent: "Mon-Sat: 8AM - 6PM"
-                  },
-                  {
-                    icon: (
-                      <svg className="w-6 h-6 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    ),
-                    title: "Factory Address",
-                    content: "Laddha Precast Manufacturing Unit",
-                    subcontent: "Industrial Area, Akola, Maharashtra - 444001"
-                  },
-                  {
-                    icon: (
-                      <svg className="w-6 h-6 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    ),
-                    title: "Business Hours",
-                    content: "Monday - Saturday: 8:00 AM - 6:00 PM",
-                    subcontent: "Sunday: Closed"
-                  }
-                ].map((item, index) => (
-                  <div 
-                    key={index}
-                    className="flex items-start space-x-6 p-6 bg-white rounded-2xl border border-gray-100 hover:shadow-lg transition-all duration-300"
-                  >
-                    <div className="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-semibold text-gray-800 mb-2">{item.title}</h4>
-                      <p className="text-gray-700 font-medium">{item.content}</p>
-                      <p className="text-gray-600 mt-1">{item.subcontent}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            <div className="bg-white p-8 rounded-2xl shadow-2xl border border-gray-100">
-              <ContactForm />
+          {/* View All Products CTA */}
+          <div className="text-center mt-16">
+            <div className="bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-8 border border-orange-200">
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                Explore All Products
+              </h3>
+              <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+                We offer a comprehensive range of precast concrete products including RCC Pipes, U Drains, Box Culverts, and custom solutions for all your construction needs.
+              </p>
+              <a 
+                href="/products"
+                className="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
+                <span>View All Products</span>
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
