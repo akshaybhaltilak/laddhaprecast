@@ -8,20 +8,12 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center mb-6 group">
-              <div className="p-1 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 transition-all duration-300 group-hover:scale-105">
-                <div className="px-4 py-3 rounded-xl bg-gray-900">
-                  <svg 
-                    className="w-8 h-8 text-orange-500" 
-                    viewBox="0 0 24 24" 
-                    fill="currentColor"
-                  >
-                    <path d="M12 3L2 9v12h20V9L12 3zm0 2.8L19 10v9h-2v-6h-2v6h-2v-6h-2v6H9v-6H7v6H5v-9l7-4.2z"/>
-                  </svg>
-                </div>
+             <div>
+                <img className='h-10 w-10' src="https://cdn-icons-png.flaticon.com/128/2823/2823437.png" alt="" />
               </div>
               <div className="ml-4">
-                <div className="text-xl font-bold text-white">Laddha Precast</div>
-                <div className="text-xs text-orange-400 font-semibold tracking-wider uppercase">Building Tomorrow, Today</div>
+                <div className="text-xl font-bold text-white">Laddha Precast Industries</div>
+                <div className="text-xs text-orange-400 font-semibold tracking-wider uppercase">Qulity You Measure, Strength You Trust</div>
               </div>
             </div>
 

@@ -50,7 +50,7 @@ const Header = () => {
                   ? 'text-gray-900' 
                   : 'text-white'
               }`}>
-                Laddha Precast
+                Laddha Precast Industries
               </span>
               <span className={`text-xs font-semibold tracking-wider uppercase transition-all duration-500 ${
                 isScrolled 
