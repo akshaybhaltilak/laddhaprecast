@@ -17,7 +17,7 @@ const Header = () => {
     { name: 'About Us', href: '/about' },
     { name: 'Products', href: '/products' },
     { name: 'Applications', href: '/applications' },
-    { name: 'Clients', href: '/clients' },
+    
   ]
 
   return (
@@ -34,27 +34,8 @@ const Header = () => {
               isScrolled ? 'scale-95' : 'scale-100'
             }`}>
               {/* Logo Container with Gradient Border */}
-              <div className={`p-1 rounded-2xl transition-all duration-500 ${
-                isScrolled 
-                  ? 'bg-gradient-to-br from-orange-500 to-orange-600' 
-                  : 'bg-gradient-to-br from-orange-400 to-orange-600'
-              }`}>
-                <div className={`px-4 py-3 rounded-xl transition-all duration-500 ${
-                  isScrolled 
-                    ? 'bg-white' 
-                    : 'bg-gray-900'
-                }`}>
-                  <svg 
-                    className={`w-8 h-8 transition-all duration-500 ${
-                      isScrolled ? 'text-orange-600' : 'text-orange-500'
-                    }`} 
-                    viewBox="0 0 24 24" 
-                    fill="currentColor"
-                  >
-                    {/* Building/Construction Icon */}
-                    <path d="M12 3L2 9v12h20V9L12 3zm0 2.8L19 10v9h-2v-6h-2v6h-2v-6h-2v6H9v-6H7v6H5v-9l7-4.2z"/>
-                  </svg>
-                </div>
+              <div>
+                <img className='h-10 w-10' src="https://cdn-icons-png.flaticon.com/128/2823/2823437.png" alt="" />
               </div>
               {/* Decorative Glow Effect */}
               <div className={`absolute inset-0 rounded-2xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500 ${
@@ -76,7 +57,7 @@ const Header = () => {
                   ? 'text-orange-600' 
                   : 'text-orange-400'
               }`}>
-                Building Tomorrow, Today
+                Qulity You Measure, Strength You Trust
               </span>
             </div>
           </a>

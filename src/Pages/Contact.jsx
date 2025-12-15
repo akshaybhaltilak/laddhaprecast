@@ -27,8 +27,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-xl font-semibold text-gray-800 mb-2">Office Address</h4>
-                  <p className="text-gray-700 font-medium">Amrut Housing Society, Building No. 3</p>
-                  <p className="text-gray-600 mt-1">Jatharpeth, Akola - 444005</p>
+                  <p className="text-gray-700 font-medium">Laddha Villa, Plot No. 90, Birla Colony, Jatharpeth, Akola, Maharashtra - 444005</p>
+                  
                 </div>
               </div>
 
@@ -41,8 +41,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-xl font-semibold text-gray-800 mb-2">Factory Address</h4>
-                  <p className="text-gray-700 font-medium">Plot No. J-50, M.I.D.C. Phase III</p>
-                  <p className="text-gray-600 mt-1">Shivni, Akola - 444104</p>
+                  <p className="text-gray-700 font-medium">Laddha Villa, Plot No. 90, Birla Colony, Jatharpeth, Akola, Maharashtra - 444005</p>
+                  
                 </div>
               </div>
 
@@ -56,16 +56,9 @@ const Contact = () => {
                 <div>
                   <h4 className="text-xl font-semibold text-gray-800 mb-2">Phone Numbers</h4>
                   <div className="space-y-2">
+                   
                     <div>
-                      <p className="text-gray-700 font-medium">Office: 0249-2490205</p>
-                      <p className="text-gray-600 text-sm">Landline</p>
-                    </div>
-                    <div>
-                      <p className="text-gray-700 font-medium">Factory: 0724-2258132, 2259132</p>
-                      <p className="text-gray-600 text-sm">Factory Lines</p>
-                    </div>
-                    <div>
-                      <p className="text-gray-700 font-medium">Mobile: 9326883292</p>
+                      <p className="text-gray-700 font-medium">Mobile: 9021133383/ 9326883297</p>
                       <p className="text-gray-600 text-sm">Direct Contact</p>
                     </div>
                   </div>

@@ -126,9 +126,8 @@ const Footer = () => {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Office</p>
-                  <p className="text-gray-200 font-semibold text-sm">Amrut Housing Society,</p>
-                  <p className="text-gray-200 font-semibold text-sm">Building No. 3, Jatharpeth,</p>
-                  <p className="text-gray-200 font-semibold text-sm">Akola - 444005</p>
+                  <p className="text-gray-200 font-semibold text-sm">Laddha Villa, Plot No. 90, Birla Colony, Jatharpeth, Akola, Maharashtra - 444005</p>
+                  
                 </div>
               </div>
 
@@ -141,8 +140,8 @@ const Footer = () => {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Factory</p>
-                  <p className="text-gray-200 font-semibold text-sm">Plot No. J-50, M.I.D.C. Phase III,</p>
-                  <p className="text-gray-200 font-semibold text-sm">Shivni, Akola - 444104</p>
+                  <p className="text-gray-200 font-semibold text-sm">Gut No. 254/2, Machchhi Talav Road, Taluka Borgaon Manju, District Akola, Maharashtra - 444102</p>
+                  
                 </div>
               </div>
 
@@ -155,7 +154,7 @@ const Footer = () => {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Phone Numbers</p>
-                  <p className="text-gray-200 font-semibold text-sm">Mobile: 9326883292</p>
+                  <p className="text-gray-200 font-semibold text-sm">Mobile: 9021133383/ 9326883297</p>
                 </div>
               </div>
 
