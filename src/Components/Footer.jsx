@@ -13,7 +13,7 @@ const Footer = () => {
               </div>
               <div className="ml-4">
                 <div className="text-xl font-bold text-white">Laddha Precast Industries</div>
-                <div className="text-xs text-orange-400 font-semibold tracking-wider uppercase">Qulity You Measure, Strength You Trust</div>
+                <div className="text-xs text-orange-400 ">Qulity You Measure, Strength You Trust</div>
               </div>
             </div>
 

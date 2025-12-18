@@ -8,20 +8,20 @@ const Applications = () => {
       description: "Precast concrete products including kerb stone, concrete tiles, saucer drains, milestones and sign boards are used to accomplish various important functions like demarcation, pavement, drainage and landscaping.",
       image: "https://images.pexels.com/photos/12181725/pexels-photo-12181725.jpeg",
       icon: (
-        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
         </svg>
       ),
       color: "bg-gradient-to-br from-orange-500 to-orange-600",
-      products: ["Kerb Stones", "Concrete Tiles", "Saucer Drains", "Milestones", "Sign Boards"]
+      products: ["Kerb Stones", "Rcc Pipes", "Saucer Drains", "Milestones", "Sign Boards"]
     },
     {
       id: 2,
       title: "Railways",
       description: "Precast concrete products quintessentially fulfil the landscaping needs of the railway industry. Concrete boards, concrete benches, route markers, drain covers, fencing, RCC pipes, ramp tiles, railway coping tiles are chiefly employed at railway stations.",
-      image: "https://images.pexels.com/photos/2742048/pexels-photo-2742048.jpeg",
+      image: "https://images.jdmagicbox.com/quickquotes/images_main/rcc-railway-platform-copping-2216470148-5e6syghb.jpg",
       icon: (
-        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
         </svg>
       ),
@@ -34,7 +34,7 @@ const Applications = () => {
       description: "Reinforced concrete products including RCC pipes, manhole chambers, route markers, trench & cable covers are embedded to ensure effective management of optical fibre cables predominantly used in the telecommunication sector nowadays.",
       image: "https://images.pexels.com/photos/2352277/pexels-photo-2352277.jpeg",
       icon: (
-        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
         </svg>
       ),
@@ -47,7 +47,7 @@ const Applications = () => {
       description: "Irrigation supply, rainwater and sewage management are chiefly carried out using precast concrete pipes, manholes, manhole covers. RCC products eliminate the possible risks of sulphide acid attacks ensuring durability in storm water, tunnel and shafts.",
       image: "https://www.brhcpipes.com/images/applications/4.BRHC.Water-Supply.jpg",
       icon: (
-        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
         </svg>
       ),
@@ -60,7 +60,7 @@ const Applications = () => {
       description: "Concrete products prove durable and robust, hence concrete paver blocks, interlocking tiles, concrete walls and concrete jalis are employed in housing development for pavement, aesthetical enhancement and security purposes.",
       image: "https://images.pexels.com/photos/280221/pexels-photo-280221.jpeg",
       icon: (
-        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
         </svg>
       ),
@@ -73,7 +73,7 @@ const Applications = () => {
       description: "Products like concrete paver blocks, interlocking tiles, concrete dustbins, concrete planters, concrete tree guards, concrete bollards, wheel stoppers, jersey barriers, kerb stones are lodged at parks, community centres, offices, malls, university campuses, parking areas, ports.",
       image: "https://images.pexels.com/photos/15893881/pexels-photo-15893881.jpeg",
       icon: (
-        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
         </svg>
       ),
@@ -83,7 +83,7 @@ const Applications = () => {
   ];
 
   return (
-    <section id="applications" className="py-16 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+    <section id="applications" className="mt-10 py-16 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-orange-100 rounded-full -translate-x-32 -translate-y-32 opacity-40"></div>
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-100 rounded-full translate-x-40 translate-y-40 opacity-30"></div>
@@ -107,36 +107,36 @@ const Applications = () => {
           </p>
         </div>
 
-        {/* Applications Grid - Square Layout */}
+        {/* Applications Grid - Smaller Image Layout */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {applications.map((app) => (
             <div 
               key={app.id}
               className="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col"
             >
-              {/* Square Image Container */}
-              <div className="relative aspect-square overflow-hidden">
+              {/* Smaller Image Container */}
+              <div className="relative h-40 overflow-hidden">
                 <img 
                   src={app.image}
                   alt={app.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
                 
                 {/* Title Overlay on Image */}
-                <div className="absolute bottom-0 left-0 right-0 p-5">
+                <div className="absolute bottom-0 left-0 right-0 p-4">
                   <div className="flex items-center space-x-3">
-                    <div className={`${app.color} w-10 h-10 rounded-lg flex items-center justify-center shadow-md`}>
+                    <div className={`${app.color} w-8 h-8 rounded-lg flex items-center justify-center shadow-md`}>
                       {app.icon}
                     </div>
-                    <h3 className="text-xl font-bold text-white">{app.title}</h3>
+                    <h3 className="text-lg font-bold text-white">{app.title}</h3>
                   </div>
                 </div>
               </div>
               
               {/* Compact Content Section */}
               <div className="p-5 flex-grow flex flex-col">
-                <p className="text-gray-700 mb-4 leading-relaxed text-sm flex-grow">
+                <p className="text-gray-700 mb-4 leading-relaxed text-sm flex-grow line-clamp-4">
                   {app.description}
                 </p>
                 
@@ -146,13 +146,13 @@ const Applications = () => {
                     {app.products.slice(0, 3).map((product, index) => (
                       <span 
                         key={index}
-                        className="px-2.5 py-1 bg-gray-50 text-gray-700 rounded-md text-xs font-medium border border-gray-200"
+                        className="px-2 py-1 bg-gray-50 text-gray-700 rounded-md text-xs font-medium border border-gray-200"
                       >
                         {product}
                       </span>
                     ))}
                     {app.products.length > 3 && (
-                      <span className="px-2.5 py-1 bg-orange-50 text-orange-700 rounded-md text-xs font-medium border border-orange-200">
+                      <span className="px-2 py-1 bg-orange-50 text-orange-700 rounded-md text-xs font-medium border border-orange-200">
                         +{app.products.length - 3} more
                       </span>
                     )}

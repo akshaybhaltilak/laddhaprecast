@@ -41,7 +41,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-xl font-semibold text-gray-800 mb-2">Factory Address</h4>
-                  <p className="text-gray-700 font-medium">Laddha Villa, Plot No. 90, Birla Colony, Jatharpeth, Akola, Maharashtra - 444005</p>
+                  <p className="text-gray-700 font-medium">Gut No. 254/2, Machchhi Talav Road, Taluka Borgaon Manju, District Akola, Maharashtra - 444102</p>
                   
                 </div>
               </div>

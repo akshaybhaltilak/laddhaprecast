@@ -35,7 +35,7 @@ const Header = () => {
             }`}>
               {/* Logo Container with Gradient Border */}
               <div>
-                <img className='h-10 w-10' src="https://cdn-icons-png.flaticon.com/128/2823/2823437.png" alt="" />
+                <img className='h-8 w-10' src="https://cdn-icons-png.flaticon.com/128/2823/2823437.png" alt="" />
               </div>
               {/* Decorative Glow Effect */}
               <div className={`absolute inset-0 rounded-2xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500 ${
@@ -45,14 +45,14 @@ const Header = () => {
             
             {/* Company Name */}
             <div className="flex flex-col">
-              <span className={`text-2xl font-bold tracking-tight transition-all duration-500 ${
+              <span className={`text-xl font-bold tracking-tight transition-all duration-500 ${
                 isScrolled 
                   ? 'text-gray-900' 
                   : 'text-white'
               }`}>
                 Laddha Precast Industries
               </span>
-              <span className={`text-xs font-semibold tracking-wider uppercase transition-all duration-500 ${
+              <span className={`text-xs transition-all duration-500 ${
                 isScrolled 
                   ? 'text-orange-600' 
                   : 'text-orange-400'

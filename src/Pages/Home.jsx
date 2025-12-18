@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
-// Import the products data from Products component
 const productsData = [
   {
-    image: "https://www.brhcpipes.com/product/BRHC.products.logo.1.RCCPipes.jpg",
+    image: "https://media.istockphoto.com/id/618225484/photo/stack-of-concrete-drainage-pipes-for-wells-and-water-discharges.jpg?s=612x612&w=0&k=20&c=_OWmkjcja0C6im50UbYnhFucYdxGq5M98dhyZ9Qir3g=",
     title: "RCC Pipes",
     description: "High-strength reinforced concrete pipes for drainage and sewage systems with excellent durability.",
     borderColor: "border-blue-600",
     bgColor: "bg-blue-100",
-    specs: ["Various diameters", "High strength", "Corrosion resistant"]
+    specs: ["Various diameters", "High strength", "Various Class"]
   },
   {
-    image: "https://artoprecast.in/assets/img/products/U-Drains/main.png",
+    image: "https://pacificprecastgroup.com/wp-content/uploads/2024/04/a5bd67b5-e685-448d-a5cd-ed4e9f7aefc4-e1726574239994-1024x449.jpeg",
     title: "Precast U Drain",
     description: "U-shaped drainage channels for optimal water flow and easy installation in various applications.",
     borderColor: "border-orange-500",
@@ -19,57 +18,25 @@ const productsData = [
     specs: ["Optimal flow", "Easy installation", "Durable construction"]
   },
   {
-    image: "https://civilcast.com.au/wp-content/uploads/Box-Culverts1.jpg",
+    image: "https://media.istockphoto.com/id/1267470753/photo/box-culverts.jpg?s=612x612&w=0&k=20&c=Sf0BGTLTX4j3D_NWUeIKzIl-6PnQBb6tW2kEkkbVu_I=",
     title: "Box Culvert",
     description: "Structural box culverts for efficient water passage under infrastructure projects.",
     borderColor: "border-blue-600",
     bgColor: "bg-blue-100",
     specs: ["Heavy duty", "Structural integrity", "Custom sizes"]
-  },
-  {
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjdqLIW0xaQUb4-Z_rVRlq0E-Ini2BosH1bg&s",
-    title: "Jacking Pipes",
-    description: "Specialized pipes for pipe jacking and microtunneling applications with precision engineering.",
-    borderColor: "border-orange-500",
-    bgColor: "bg-orange-100",
-    specs: ["Pipe jacking", "Microtunneling", "Reinforced"]
-  },
-  {
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIIOG_v9WL-xnNppsl1nYrCabPF1fa6M0KHQ&s",
-    title: "HDPE Lining Pipes",
-    description: "Concrete pipes with HDPE lining for enhanced corrosion resistance and longevity.",
-    borderColor: "border-blue-600",
-    bgColor: "bg-blue-100",
-    specs: ["HDPE lining", "Corrosion proof", "Extended lifespan"]
-  },
-  {
-    image: "https://www.brhcpipes.com/product/BRHC_25.products.2.RCCManholeSystem.1.circular.jpg",
-    title: "Precast Manholes",
-    description: "Complete precast manhole systems for urban infrastructure with heavy-duty construction.",
-    borderColor: "border-orange-500",
-    bgColor: "bg-orange-100",
-    specs: ["Complete systems", "Weather proof", "Easy access"]
-  },
-  {
-    image: "https://images.jdmagicbox.com/comp/pune/p5/020pxx20.xx20.190313153755.n5p5/catalogue/kalokhe-pipes-and-precast-industries-talegaon-dabhade-pune-rcc-pipe-dealers-qpw9nxb1mw.jpg",
-    title: "Customized Products",
-    description: "Tailored precast concrete solutions designed for specific project requirements.",
-    borderColor: "border-blue-600",
-    bgColor: "bg-blue-100",
-    specs: ["Bespoke designs", "Project specific", "Quality assured"]
   }
 ];
 
 const Home = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [imageLoaded, setImageLoaded] = useState({});
   
   const heroImages = [
-    "https://media.istockphoto.com/id/618225484/photo/stack-of-concrete-drainage-pipes-for-wells-and-water-discharges.jpg?s=2048x2048&w=is&k=20&c=OgevDnJQ2z85TlIDNhLdKS-Vs-BOGL1vdkiln3BTiPQ=",
+    "https://media.istockphoto.com/id/618225484/photo/stack-of-concrete-drainage-pipes-for-wells-and-water-discharges.jpg?s=612x612&w=0&k=20&c=_OWmkjcja0C6im50UbYnhFucYdxGq5M98dhyZ9Qir3g=",
     "https://media.istockphoto.com/id/845506412/photo/asbestos-cement-pipes.jpg?s=2048x2048&w=is&k=20&c=bGeEWSFwTuarB-XX-FgQT-PSz0jv6C96_dF5BYm7lL8=",
     "https://media.istockphoto.com/id/872309564/photo/large-concrete-pipe-stacked-in-the-open-for-storage-for-big-construction.jpg?s=2048x2048&w=is&k=20&c=C3UFJzFmMZBFGkafBVuHmgJVpEoRM_v22dLToWPejtg="
   ];
 
-  // Use first 3 products as featured products
   const featuredProducts = productsData.slice(0, 3).map(product => ({
     name: product.title,
     description: product.description,
@@ -83,257 +50,305 @@ const Home = () => {
         prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1
       );
     }, 5000);
-
     return () => clearInterval(interval);
   }, []);
 
+  const handleImageLoad = (index) => {
+    setImageLoaded(prev => ({ ...prev, [index]: true }));
+  };
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
       {/* Hero Section */}
-      <section id="home" className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white min-h-screen flex items-center overflow-hidden">
-        {/* Background Image Carousel with Enhanced Overlay */}
-        <div className="absolute inset-0 z-0">
-          {heroImages.map((image, index) => (
-            <div
-              key={index}
-              className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-1000 ${
-                index === currentImageIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
-              }`}
-              style={{ backgroundImage: `url("${image}")` }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-white-900/90 via-white-900/80 to-orange-500/10"></div>
-            </div>
-          ))}
-        </div>
+      <div className="relative h-screen overflow-hidden">
+        {/* Background Image Carousel */}
+        {heroImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            {/* Loading Skeleton */}
+            {!imageLoaded[index] && (
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-300 via-gray-200 to-gray-300 animate-pulse" />
+            )}
+            
+            <img
+              src={image}
+              alt={`Hero ${index + 1}`}
+              className="w-full h-full object-cover"
+              onLoad={() => handleImageLoad(index)}
+              style={{ display: imageLoaded[index] ? 'block' : 'none' }}
+            />
+            
+            {/* Multi-layer Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-900/60 via-gray-800/40 to-gray-700/35" />
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-600/20 via-transparent to-orange-500/10" />
+          </div>
+        ))}
 
         {/* Animated Background Elements */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-orange-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-600/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
         </div>
-        
-        <div className="container mx-auto px-4 py-20 relative z-10">
-          <div className="max-w-6xl mx-auto">
+
+        {/* Content Container */}
+        <div className="relative h-full flex items-center">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
+              
               {/* Left Content */}
-              <div className="text-center lg:text-left">
-                {/* Main Heading with Animation */}
-                <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-                  <span className="block text-white">Laddha Precast</span>
-                  <span className="block bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent mt-2">
-                    Industries
-                  </span>
-                </h1>
-                
+              <div className="space-y-8 animate-fade-in">
+                {/* Company Badge */}
+              
+
+                {/* Main Heading */}
+                <div className="space-y-4">
+                  <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight">
+                    Laddha
+                    <span className="block bg-gradient-to-r from-orange-400 via-orange-300 to-orange-500 bg-clip-text text-transparent mt-2">
+                      Precast Industries
+                    </span>
+                  </h1>
+                  
+                  <div className="h-1 w-32 bg-gradient-to-r from-orange-500 via-orange-400 to-orange-600 rounded-full" />
+                </div>
+
                 {/* Subtitle */}
-                <p className="text-lg md:text-xl mb-8 text-gray-900 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                  Premium quality reinforced concrete pipes, precast slabs, and construction solutions engineered for durability, strength, and excellence in every project.
+                <p className="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl">
+                  Premium quality reinforced concrete pipes, box culverts, and allied precast products engineered for 
+                  <span className="text-orange-400 font-semibold"> durability</span>, 
+                  <span className="text-orange-300 font-semibold"> strength</span>, and 
+                  <span className="text-white font-semibold"> excellence</span> in every construction project.
                 </p>
 
                 {/* Feature Pills */}
-                <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
-                  <div className="px-4 py-2 bg-gray-800/50 backdrop-blur-sm rounded-full border border-orange-500/30 text-sm font-medium flex items-center">
-                    <svg className="w-4 h-4 mr-2 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    ISO Certified
-                  </div>
-                  <div className="px-4 py-2 bg-gray-800/50 backdrop-blur-sm rounded-full border border-orange-500/30 text-sm font-medium flex items-center">
-                    <svg className="w-4 h-4 mr-2 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Premium Quality
-                  </div>
-                  <div className="px-4 py-2 bg-gray-800/50 backdrop-blur-sm rounded-full border border-orange-500/30 text-sm font-medium flex items-center">
-                    <svg className="w-4 h-4 mr-2 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Fast Delivery
-                  </div>
+                <div className="flex flex-wrap gap-3">
+                  {[
+                    { icon: "✓", text: "ISO Certified", color: "from-orange-600 to-orange-700" },
+                    { icon: "★", text: "Premium Quality", color: "from-gray-700 to-gray-800" },
+                    { icon: "⚡", text: "Fast Delivery", color: "from-orange-500 to-orange-600" }
+                  ].map((item, index) => (
+                    <div
+                      key={index}
+                      className={`px-5 py-2.5 bg-gradient-to-r ${item.color} rounded-full border border-white/20 backdrop-blur-sm transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}
+                    >
+                      <span className="text-white font-medium flex items-center gap-2">
+                        <span className="text-lg">{item.icon}</span>
+                        {item.text}
+                      </span>
+                    </div>
+                  ))}
                 </div>
-                
+
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <a 
-                    href="#featured-products"
-                    className="group bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl shadow-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/50 flex items-center justify-center"
-                  >
-                    <span>Explore Products</span>
-                    <svg className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
-                  <a
-                    href="/contact"
-                    className="group bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:bg-white hover:text-gray-900 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
-                  >
-                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                    </svg>
-                    <span>Request Quote</span>
-                  </a>
+                <div className="flex flex-wrap gap-4 pt-4">
+                  <button className="group px-8 py-4 bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-500 hover:to-orange-600 text-white font-semibold rounded-xl shadow-2xl shadow-orange-900/50 transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 border border-orange-400/30">
+                    <span className="flex items-center gap-2">
+                      Explore Products
+                      <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </span>
+                  </button>
+                  
+                  <button className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold rounded-xl border-2 border-white/30 hover:border-orange-400/50 transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 shadow-xl">
+                    Request Quote
+                  </button>
                 </div>
               </div>
 
               {/* Right Content - Product Highlights */}
-              <div className="grid grid-cols-1 gap-6">
+              <div className="hidden lg:grid grid-cols-1 gap-4">
                 {featuredProducts.map((product, index) => (
-                  <div 
+                  <div
                     key={index}
-                    className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:border-orange-500/50 group"
+                    className="group relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                    style={{ animationDelay: `${index * 0.2}s` }}
                   >
-                    <div className="flex items-start space-x-4">
-                      <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                        </svg>
+                    <div className="flex items-center gap-4">
+                      {/* Product Image */}
+                      <div className="relative w-20 h-20 rounded-xl overflow-hidden border-2 border-orange-400/30 shadow-lg flex-shrink-0">
+                        {!imageLoaded[`product-${index}`] && (
+                          <div className="absolute inset-0 bg-gradient-to-br from-gray-300 to-gray-400 animate-pulse" />
+                        )}
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          onLoad={() => handleImageLoad(`product-${index}`)}
+                          onError={(e) => {
+                            e.target.src = "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80";
+                          }}
+                        />
                       </div>
+
+                      {/* Product Info */}
                       <div className="flex-1">
-                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-orange-400 transition-colors duration-300">
+                        <h3 className="text-white font-bold text-lg mb-1 group-hover:text-orange-300 transition-colors">
                           {product.name}
                         </h3>
-                        <p className="text-gray-300 text-sm leading-relaxed">
+                        <p className="text-gray-300 text-sm leading-relaxed line-clamp-2">
                           {product.description}
                         </p>
-                        <div className="flex flex-wrap gap-2 mt-3">
-                          {product.features.slice(0, 2).map((feature, featureIndex) => (
-                            <span 
-                              key={featureIndex}
-                              className="px-2 py-1 bg-orange-500/20 text-orange-300 rounded-full text-xs font-medium"
-                            >
-                              {feature}
-                            </span>
-                          ))}
-                        </div>
                       </div>
+
+                      {/* Arrow Icon */}
+                      <svg className="w-6 h-6 text-orange-400 group-hover:translate-x-2 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-
-            {/* Image Indicators */}
-            <div className="flex justify-center lg:justify-start space-x-3 mt-12">
-              {heroImages.map((_, index) => (
-                <button
-                  key={index}
-                  className={`h-1 rounded-full transition-all duration-500 ${
-                    index === currentImageIndex 
-                      ? 'w-12 bg-gradient-to-r from-orange-400 to-orange-600' 
-                      : 'w-8 bg-white/30 hover:bg-white/50'
-                  }`}
-                  onClick={() => setCurrentImageIndex(index)}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
           </div>
+        </div>
+
+        {/* Image Indicators */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-3 z-20">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentImageIndex(index)}
+              className={`transition-all duration-300 rounded-full ${
+                index === currentImageIndex
+                  ? 'w-12 h-3 bg-gradient-to-r from-orange-500 to-orange-600'
+                  : 'w-3 h-3 bg-white/40 hover:bg-white/60'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-          <div className="flex flex-col items-center text-white/60">
-            <span className="text-xs font-medium mb-2">Scroll Down</span>
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </div>
+        <div className="absolute bottom-8 right-8 flex flex-col items-center gap-2 animate-bounce">
+          <span className="text-white/80 text-sm font-medium">Scroll Down</span>
+          <svg className="w-6 h-6 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
         </div>
-      </section>
+      </div>
 
       {/* Featured Products Section */}
-      <section id="featured-products" className="py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-              Our <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Featured Products</span>
-            </h2>
-            <div className="w-24 h-1.5 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full mb-6"></div>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Discover our range of high-quality precast concrete products designed for modern construction needs
-            </p>
-          </div>
+     <div className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-orange-50/40 to-slate-100">
+  <div className="container mx-auto">
+    <div className="text-center mb-16">
+      <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 rounded-full mb-4">
+        <span className="text-orange-600 font-semibold text-sm">OUR PRODUCTS</span>
+      </div>
+      <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
+        Our Featured Products
+      </h2>
+      <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+        Premium quality reinforced concrete products engineered for durability, strength, and excellence
+      </p>
+    </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredProducts.map((product, index) => (
-              <div 
-                key={index}
-                className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-orange-200 overflow-hidden"
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={product.image} 
-                    alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  <div className="absolute top-4 right-4">
-                    <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center backdrop-blur-sm">
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-3 group-hover:text-orange-600 transition-colors duration-300">
-                    {product.name}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed mb-4">
-                    {product.description}
-                  </p>
-                  
-                  <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-gray-500 mb-3">KEY FEATURES:</h4>
-                    <div className="space-y-2">
-                      {product.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center text-gray-700">
-                          <svg className="w-4 h-4 mr-3 text-orange-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span className="text-sm">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <a 
-                    href="/products"
-                    className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-3 px-6 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center group/btn shadow-lg shadow-orange-500/30"
-                  >
-                    <span>View Details</span>
-                    <svg className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
+  
 
-          {/* View All Products CTA */}
-          <div className="text-center mt-16">
-            <div className="bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-8 border border-orange-200">
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-                Explore All Products
-              </h3>
-              <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-                We offer a comprehensive range of precast concrete products including RCC Pipes, U Drains, Box Culverts, and custom solutions for all your construction needs.
-              </p>
-              <a 
-                href="/products"
-                className="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
-              >
-                <span>View All Products</span>
-                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
+    {/* View All Products CTA */}
+    <div className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-orange-50/40 to-slate-100">
+  <div className="container mx-auto">
+    <div className="text-center mb-16">
+      <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 rounded-full mb-4">
+        <span className="text-orange-600 font-semibold text-sm">OUR PRODUCTS</span>
+      </div>
+      <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
+        Our Featured Products
+      </h2>
+      <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+        Premium quality reinforced concrete products engineered for durability, strength, and excellence
+      </p>
+    </div>
+
+    {/* Product Cards */}
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {featuredProducts.map((product, index) => (
+        <div
+          key={index}
+          className="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border border-slate-200 hover:border-orange-300 transform hover:-translate-y-2"
+        >
+          {/* Image Container */}
+          <div className="relative h-64 overflow-hidden bg-slate-200">
+            {!imageLoaded[`card-${index}`] && (
+              <div className="absolute inset-0 bg-gradient-to-br from-slate-200 via-slate-100 to-slate-200 animate-pulse" />
+            )}
+            <img
+              src={product.image}
+              alt={product.name}
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              onLoad={() => handleImageLoad(`card-${index}`)}
+              onError={(e) => {
+                e.target.src = "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80";
+              }}
+            />
+            
+            {/* Badge */}
+            <div className="absolute top-4 right-4 px-3 py-1 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-xs font-bold rounded-full shadow-lg">
+              FEATURED
             </div>
           </div>
+
+          {/* Content */}
+          <div className="p-6 space-y-4">
+            <h3 className="text-2xl font-bold text-slate-900 group-hover:text-orange-600 transition-colors">
+              {product.name}
+            </h3>
+            <p className="text-slate-600 leading-relaxed">
+              {product.description}
+            </p>
+
+            {/* Features */}
+            <div className="space-y-2 pt-2">
+              <h4 className="text-sm font-semibold text-slate-700 uppercase tracking-wide">Key Features</h4>
+              <div className="flex flex-wrap gap-2">
+                {product.features.map((feature, featureIndex) => (
+                  <span
+                    key={featureIndex}
+                    className="px-3 py-1 bg-gradient-to-r from-orange-50 to-slate-100 text-orange-700 text-sm rounded-lg border border-orange-200"
+                  >
+                    {feature}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* CTA Button */}
+            <button className="w-full mt-4 px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold rounded-xl transition-all duration-300 transform group-hover:scale-105 shadow-md hover:shadow-lg">
+              View Product Details
+            </button>
+          </div>
         </div>
-      </section>
+      ))}
+    </div>
+
+    {/* View All Products CTA */}
+    <div className="mt-16 text-center relative">
+  {/* Background Pattern */}
+  <div className="absolute inset-0 bg-gradient-to-r from-orange-400 via-orange-200 to-slate-200 rounded-3xl opacity-10" />
+  
+  <div className="relative py-12 px-6">
+    <h3 className="text-3xl font-bold text-slate-900 mb-4">
+      Explore Our Complete Product Range
+    </h3>
+    <p className="text-lg text-slate-600 mb-8 max-w-3xl mx-auto">
+      We offer a comprehensive range of premium precast concrete products including RCC Pipes, U-Drains,
+      Box Culverts, and custom engineering solutions for all your construction and infrastructure requirements.
+    </p>
+    <button className="px-10 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+      Browse All Products
+    </button>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
     </div>
   );
 };
