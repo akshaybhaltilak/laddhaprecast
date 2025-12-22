@@ -16,7 +16,7 @@ const Clients = () => {
           {[
             {
               name: "Government Infrastructure Projects",
-              projects: "National Highways, Urban Development, Public Works",
+              projects: "National Highways, Urban Development, Public Works, Water Industries",
               satisfaction: "100% Quality Compliance"
             },
             {
@@ -49,19 +49,19 @@ const Clients = () => {
               key={index}
               className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
-              <h3 className="text-xl font-bold text-blue-800 mb-4">{client.name}</h3>
+              <h3 className="text-xl font-bold text-orange-600 mb-4">{client.name}</h3>
               
               <div className="mb-4">
                 <div className="text-sm text-gray-600 mb-2">Projects:</div>
                 <div className="text-gray-700 font-medium">{client.projects}</div>
               </div>
               
-              <div className="flex items-center text-green-600 font-semibold">
+              {/* <div className="flex items-center text-green-600 font-semibold">
                 <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 {client.satisfaction}
-              </div>
+              </div> */}
             </div>
           ))}
         </div>

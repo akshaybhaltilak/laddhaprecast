@@ -7,11 +7,11 @@ const About = () => {
       <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange-100 to-orange-50 rounded-full -translate-y-48 translate-x-48 opacity-40 blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-gray-200 to-gray-100 rounded-full translate-y-48 -translate-x-48 opacity-30 blur-3xl"></div>
       <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-gradient-to-br from-orange-50 to-transparent rounded-full opacity-20 blur-3xl"></div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
         {/* Page Header */}
         <div className="text-center mb-2 mt-30 animate-fade-in">
-          
+
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-2 ">
             About <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Laddha Precast Industries</span>
           </h2>
@@ -22,168 +22,168 @@ const About = () => {
         </div>
 
         {/* Founders Section */}
-<div className="mb-24">
-  <div className="text-center mb-16">
-    <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Leadership</h3>
-    <div className="w-20 h-1 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full mb-4"></div>
-    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-      Meet the visionary leaders behind our success story
-    </p>
-  </div>
+        <div className="mb-24">
+          <div className="text-center mb-16">
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Leadership</h3>
+            <div className="w-20 h-1 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full mb-4"></div>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Meet the visionary leaders behind our success story
+            </p>
+          </div>
 
-  <div className="grid md:grid-cols-3 gap-8 lg:gap-12 max-w-7xl mx-auto">
-    {/* Founder 1 */}
-    <div>
-      <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-        <div className="relative">
-          <div className="relative w-full h-80 overflow-hidden bg-gradient-to-br from-orange-50 to-orange-100">
-            <img 
-              src="subhash.jpeg" 
-              alt="Shri Subhashchandra Laddha"
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                e.target.src = "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80";
-              }}
-            />
-          </div>
-          <div className="absolute top-4 right-4 w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center shadow-lg">
-            <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-            </svg>
-          </div>
-        </div>
-        <div className="p-6">
-          <h4 className="text-2xl font-bold text-gray-800 mb-2">
-            Shri Subhashchandra Laddha
-          </h4>
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-50 rounded-full mb-4">
-            <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-            <p className="text-orange-600 font-semibold text-sm">Founder & Chairman</p>
-          </div>
-          <p className="text-gray-600 leading-relaxed">
-            Visionary leader with 40+ years of experience in construction industry. 
-            Founded Pankaj Pipes in 1982 and established the Laddha legacy.
-          </p>
-        </div>
-      </div>
-    </div>
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-12 max-w-7xl mx-auto">
+            {/* Founder 1 */}
+            <div>
+              <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+                <div className="relative">
+                  <div className="flex mx-auto w-70 h-70 overflow-hidden bg-gradient-to-br from-orange-50 to-orange-100">
+                    <img
+                      src="subhash.jpeg"
+                      alt="Shri Subhashchandra Laddha"
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.target.src = "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80";
+                      }}
+                    />
+                  </div>
+                  <div className="absolute top-4 right-4 w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center shadow-lg">
+                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h4 className="text-2xl font-bold text-gray-800 mb-2">
+                    Shri Subhashchandra Laddha
+                  </h4>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-50 rounded-full mb-4">
+                    <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                    <p className="text-orange-600 font-semibold text-sm">Founder & Chairman</p>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed">
+                    Visionary leader with 40+ years of experience in construction industry.
+                    Founded Pankaj Pipes in 1982 and established the Laddha legacy.
+                  </p>
+                </div>
+              </div>
+            </div>
 
-    {/* Founder 2 */}
-    <div>
-      <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-        <div className="relative">
-          <div className="relative w-60 h-80 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
-            <img 
-              src="manish.JPG"  
-              alt="Mr. Manish Laddha"
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                e.target.src = "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80";
-              }}
-            />
-          </div>
-          <div className="absolute top-4 right-4 w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center shadow-lg">
-            <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-            </svg>
-          </div>
-        </div>
-        <div className="p-6">
-          <h4 className="text-2xl font-bold text-gray-800 mb-2">
-            Mr. Manish Laddha
-          </h4>
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-50 rounded-full mb-4">
-            <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-            <p className="text-orange-600 font-semibold text-sm">Managing Director</p>
-          </div>
-          <p className="text-gray-600 leading-relaxed">
-            Driving force behind strategic partnerships and business expansion. 
-            Expert in precast concrete technology and market development.
-          </p>
-        </div>
-      </div>
-    </div>
+            {/* Founder 2 */}
+            <div>
+              <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+                <div className="relative">
+                  <div className="flex mx-auto w-60 h-70 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
+                    <img
+                      src="manish.JPG"
+                      alt="Mr. Manish Laddha"
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.target.src = "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80";
+                      }}
+                    />
+                  </div>
+                  <div className="absolute top-4 right-4 w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center shadow-lg">
+                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h4 className="text-2xl font-bold text-gray-800 mb-2">
+                    Mr. Manish Laddha
+                  </h4>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-50 rounded-full mb-4">
+                    <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                    <p className="text-orange-600 font-semibold text-sm">Managing Director</p>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed">
+                    Driving force behind strategic partnerships and business expansion.
+                    Expert in precast concrete technology and market development.
+                  </p>
+                </div>
+              </div>
+            </div>
 
-    {/* Founder 3 */}
-    <div>
-      <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-        <div className="relative">
-          <div className="relative w-full h-80 overflow-hidden bg-gradient-to-br from-orange-50 to-orange-100">
-            <img 
-              src="yash.png" 
-              alt="Er. Yash Laddha"
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                e.target.src = "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80";
-              }}
-            />
-          </div>
-          <div className="absolute top-4 right-4 w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center shadow-lg">
-            <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-            </svg>
+            {/* Founder 3 */}
+            <div>
+              <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+                <div className="relative">
+                  <div className="flex mx-auto w-70 h-70 overflow-hidden bg-gradient-to-br from-orange-50 to-orange-100">
+                    <img
+                      src="yash.png"
+                      alt="Er. Yash Laddha"
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.target.src = "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80";
+                      }}
+                    />
+                  </div>
+                  <div className="absolute top-4 right-4 w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center shadow-lg">
+                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h4 className="text-2xl font-bold text-gray-800 mb-2">
+                    Er. Yash Laddha
+                  </h4>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-50 rounded-full mb-4">
+                    <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                    <p className="text-orange-600 font-semibold text-sm">Technical Director</p>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed">
+                    Oversees technical operations and quality control.
+                    Brings innovation and modern manufacturing techniques to our processes.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="p-6">
-          <h4 className="text-2xl font-bold text-gray-800 mb-2">
-            Er. Yash Laddha
-          </h4>
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-50 rounded-full mb-4">
-            <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-            <p className="text-orange-600 font-semibold text-sm">Technical Director</p>
-          </div>
-          <p className="text-gray-600 leading-relaxed">
-            Oversees technical operations and quality control. 
-            Brings innovation and modern manufacturing techniques to our processes.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
         {/* Company History & Legacy */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-24">
           <div className="space-y-6">
             {/* Legacy Card */}
-           <div className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl border border-gray-100 hover:border-orange-200 transition-all duration-500 transform hover:-translate-x-2">
-  <div className="flex items-start space-x-5">
-    
-    {/* Factory Icon */}
-    <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-500">
-      <svg
-        className="w-8 h-8 text-white"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        {/* Factory / Industry Icon */}
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M3 21V10l6 3V10l6 3V7l6 3v11H3zm4-4h2m4 0h2m4 0h2"
-        />
-      </svg>
-    </div>
+            <div className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl border border-gray-100 hover:border-orange-200 transition-all duration-500 transform hover:-translate-x-2">
+              <div className="flex items-start space-x-5">
 
-    <div className="flex-1">
-      <h4 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-orange-600 transition-colors">
-        Pankaj Spun Pipes Industries Legacy
-      </h4>
-      <p className="text-orange-600 font-semibold text-sm mb-3">
-        Established 1982
-      </p>
-      <p className="text-gray-600 leading-relaxed">
-        Our journey began in 1982 with Pankaj Spun Pipes Industries in Akola, building a strong foundation 
-        in the construction industry with quality products and trusted relationships.
-      </p>
-    </div>
+                {/* Factory Icon */}
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-500">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    {/* Factory / Industry Icon */}
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 21V10l6 3V10l6 3V7l6 3v11H3zm4-4h2m4 0h2m4 0h2"
+                    />
+                  </svg>
+                </div>
 
-  </div>
-</div>
+                <div className="flex-1">
+                  <h4 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-orange-600 transition-colors">
+                    Pankaj Spun Pipes Industries Legacy
+                  </h4>
+                  <p className="text-orange-600 font-semibold text-sm mb-3">
+                    Established 1982
+                  </p>
+                  <p className="text-gray-600 leading-relaxed">
+                    Our journey began in 1982 with Pankaj Spun Pipes Industries in Akola, building a strong foundation
+                    in the Infrastructure industry with quality products and trusted relationships.
+                  </p>
+                </div>
 
-            
+              </div>
+            </div>
+
+
             {/* Partnership Card */}
             <div className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl border border-gray-100 hover:border-orange-200 transition-all duration-500 transform hover:-translate-x-2">
               <div className="flex items-start space-x-5">
@@ -198,7 +198,7 @@ const About = () => {
                   </h4>
                   <p className="text-gray-600 font-semibold text-sm mb-3">Parent Firm Association</p>
                   <p className="text-gray-600 leading-relaxed">
-                    Our parent firm's strong association with Atul Pipes & Swastik Spun Pipe & M. M. Co, Amravati brings decades of expertise 
+                    Our parent firm's strong association with Atul Pipes & Swastik Spun Pipe & M. M. Co, Amravati brings decades of expertise
                     and industry knowledge to deliver superior precast solutions across Maharashtra.
                   </p>
                 </div>
@@ -219,23 +219,23 @@ const About = () => {
                   </h4>
                   <p className="text-orange-600 font-semibold text-sm mb-3">All Maharashtra Presence</p>
                   <p className="text-gray-600 leading-relaxed">
-                    As the new flagship firm, Laddha Precast Industries extends our legacy across 
+                    As the new flagship firm, Laddha Precast Industries extends our legacy across
                     Maharashtra, offering comprehensive precast concrete solutions with unmatched quality.
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          
+
           {/* Stats & Growth Section */}
           <div className="bg-gradient-to-br from-white to-gray-50 p-10 rounded-2xl shadow-xl border border-gray-200">
             <h3 className="text-3xl font-bold text-gray-800 mb-6">Our Legacy & Growth</h3>
             <p className="text-gray-700 leading-relaxed mb-8">
-              From our humble beginnings in 1982 with Pankaj Pipes to becoming Laddha Precast Industries, 
-              we have consistently evolved while maintaining our core values of <span className="font-semibold text-orange-600">quality, reliability, and innovation</span>. 
+              From our humble beginnings in 1982 with Pankaj Spun Pipes Industries to becoming Laddha Precast Industries,
+              we have consistently evolved while maintaining our core values of <span className="font-semibold text-orange-600">quality, reliability, and innovation</span>.
               Our journey spans four decades of serving Maharashtra's infrastructure needs.
             </p>
-            
+
             <div className="grid grid-cols-2 gap-6">
               <div className="group text-center p-6 bg-gradient-to-br from-orange-50 via-white to-orange-50/50 rounded-xl border-2 border-orange-100 hover:border-orange-300 transition-all duration-500 hover:shadow-lg transform hover:-translate-y-1">
                 <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-500">
@@ -281,7 +281,7 @@ const About = () => {
         </div>
 
         {/* Why Choose Us Section */}
-         <div className="bg-white/90 backdrop-blur-sm p-12 rounded-2xl shadow-xl border border-gray-100">
+        <div className="bg-white/90 backdrop-blur-sm p-12 rounded-2xl shadow-xl border border-gray-100">
           <div className="text-center mb-16">
             <h3 className="text-4xl font-bold text-gray-800 mb-6">Why Choose Laddha Precast?</h3>
             <div className="w-24 h-1.5 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full"></div>
@@ -296,11 +296,11 @@ const About = () => {
               </div>
               <h4 className="text-xl font-bold text-gray-800 mb-4">We Build Quality</h4>
               <p className="text-gray-700 leading-relaxed">
-                All our products are precisely manufactured to ensure highest standards of quality and sustainability. 
+                All our products are precisely manufactured to ensure highest standards of quality and sustainability.
                 From choosing first-rate raw materials to adopting high-tech processes, we provide nothing less than supreme.
               </p>
             </div>
-            
+
             <div className="text-center p-8 bg-gradient-to-br from-orange-50 to-white rounded-2xl border border-orange-100 transition-all duration-300">
               <div className="w-20 h-20 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
                 <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -309,7 +309,7 @@ const About = () => {
               </div>
               <h4 className="text-xl font-bold text-gray-800 mb-4">Competitive Pricing</h4>
               <p className="text-gray-700 leading-relaxed">
-                We endeavor to create win-win situations with reasonable quotation structures and premium quality 
+                We endeavor to create win-win situations with reasonable quotation structures and premium quality
                 deliverance, ensuring all our clients are satisfied with both price and quality.
               </p>
             </div>
@@ -322,42 +322,42 @@ const About = () => {
               </div>
               <h4 className="text-xl font-bold text-gray-800 mb-4">On-time Delivery</h4>
               <p className="text-gray-700 leading-relaxed">
-                Timely deliverance is as important as quality deliverance to us. We believe real-time services 
+                Timely deliverance is as important as quality deliverance to us. We believe real-time services
                 are essential for overall customer satisfaction and strive to maintain a timely-delivered portfolio.
               </p>
             </div>
 
-           <div className="text-center p-8 bg-gradient-to-br from-orange-50 to-white rounded-2xl border border-orange-100 transition-all duration-300">
-  
-  {/* Icon */}
-  <div className="w-20 h-20 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
-    <svg
-      className="w-10 h-10 text-white"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-    >
-      {/* Concrete / Cement Blocks Icon */}
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M3 7h8v4H3V7zm10 0h8v4h-8V7zM3 13h8v4H3v-4zm10 0h8v4h-8v-4z"
-      />
-    </svg>
-  </div>
+            <div className="text-center p-8 bg-gradient-to-br from-orange-50 to-white rounded-2xl border border-orange-100 transition-all duration-300">
 
-  {/* Content */}
-  <h4 className="text-xl font-bold text-gray-800 mb-4">
-    Concrete Material Expertise
-  </h4>
-  <p className="text-gray-700 leading-relaxed">
-    Our strength lies in deep expertise of concrete materials including cement,
-    aggregates, and mix design, ensuring superior strength and long-lasting durability.
-  </p>
-</div>
+              {/* Icon */}
+              <div className="w-20 h-20 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
+                <svg
+                  className="w-10 h-10 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  {/* Concrete / Cement Blocks Icon */}
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 7h8v4H3V7zm10 0h8v4h-8V7zM3 13h8v4H3v-4zm10 0h8v4h-8v-4z"
+                  />
+                </svg>
+              </div>
 
-            
+              {/* Content */}
+              <h4 className="text-xl font-bold text-gray-800 mb-4">
+                Concrete Material Expertise
+              </h4>
+              <p className="text-gray-700 leading-relaxed">
+                Our strength lies in deep expertise of concrete materials including cement,
+                aggregates, and mix design, ensuring superior strength and long-lasting durability.
+              </p>
+            </div>
+
+
             <div className="text-center p-8 bg-gradient-to-br from-teal-50 to-white rounded-2xl border border-teal-100 transition-all duration-300">
               <div className="w-20 h-20 bg-gradient-to-r from-teal-500 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
                 <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -366,11 +366,11 @@ const About = () => {
               </div>
               <h4 className="text-xl font-bold text-gray-800 mb-4">Expert Knowledge</h4>
               <p className="text-gray-700 leading-relaxed">
-                With decades of experience, we are experts in assisting customers in finding their best solutions, 
+                With decades of experience, we are experts in assisting customers in finding their best solutions,
                 from product selection to size specifications and providing diagrammatic assistance for better understanding.
               </p>
             </div>
-            
+
             <div className="text-center p-8 bg-gradient-to-br from-purple-50 to-white rounded-2xl border border-purple-100 transition-all duration-300">
               <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
                 <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -379,7 +379,7 @@ const About = () => {
               </div>
               <h4 className="text-xl font-bold text-gray-800 mb-4">Complete Solutions</h4>
               <p className="text-gray-700 leading-relaxed">
-                We serve as a one-stop destination for all precast concrete needs. We offer a wide range of 
+                We serve as a one-stop destination for all precast concrete needs. We offer a wide range of
                 precast concrete products, covering all applications and requirements of the industry.
               </p>
             </div>
