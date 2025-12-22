@@ -34,7 +34,7 @@ const Home = () => {
   const heroImages = [
     "https://media.istockphoto.com/id/618225484/photo/stack-of-concrete-drainage-pipes-for-wells-and-water-discharges.jpg?s=612x612&w=0&k=20&c=_OWmkjcja0C6im50UbYnhFucYdxGq5M98dhyZ9Qir3g=",
     "https://5.imimg.com/data5/SELLER/Default/2022/12/VW/XO/TB/533823/rcc-precast-concrete-pipe.jpg",
-    "https://t3.ftcdn.net/jpg/16/43/24/22/360_F_1643242231_pOZrkWkzf4ukM1BzLVWuhblJwW0W3Mfb.jpg"
+    "https://spotlite.com.my/wp-content/uploads/2023/03/14.3.2023-5.jpg"
   ];
 
   const featuredProducts = productsData.slice(0, 3).map(product => ({
