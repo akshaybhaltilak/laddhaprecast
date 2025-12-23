@@ -1,56 +1,64 @@
 import React from 'react';
 
 const Applications = () => {
-  const applications = [
-    {
-      id: 1,
-      title: "Roadways",
-      description: "Precast concrete products used for road safety, drainage, pavement marking, and landscaping.",
-      image: "https://images.pexels.com/photos/12181725/pexels-photo-12181725.jpeg",
-      color: "bg-gradient-to-br from-orange-500 to-orange-600",
-      products: ["Kerb Stones", "RCC Pipes", "Saucer Drains", "Milestones", "Sign Boards"]
-    },
-    {
-      id: 2,
-      title: "Railways",
-      description: "Durable concrete products used at railway stations for safety, drainage, and landscaping.",
-      image: "https://images.jdmagicbox.com/quickquotes/images_main/rcc-railway-platform-copping-2216470148-5e6syghb.jpg",
-      color: "bg-gradient-to-br from-blue-500 to-blue-600",
-      products: ["Concrete Boards", "Route Markers", "Drain Covers", "RCC Pipes", "Railway Tiles"]
-    },
-    {
-      id: 3,
-      title: "Telecommunication",
-      description: "Concrete solutions for protecting and managing optical fibre and cable networks.",
-      image: "https://images.pexels.com/photos/2352277/pexels-photo-2352277.jpeg",
-      color: "bg-gradient-to-br from-green-500 to-green-600",
-      products: ["RCC Pipes", "Manhole Chambers", "Route Markers", "Trench Covers", "Cable Covers"]
-    },
-    {
-      id: 4,
-      title: "Water Industry",
-      description: "Reliable concrete products for water supply, drainage, and sewage management.",
-      image: "https://www.brhcpipes.com/images/applications/4.BRHC.Water-Supply.jpg",
-      color: "bg-gradient-to-br from-teal-500 to-teal-600",
-      products: ["Precast Pipes", "Manhole Systems", "Drainage Channels", "Sewage Pipes", "Water Tanks"]
-    },
-    {
-      id: 5,
-      title: "Housing",
-      description: "Strong and attractive concrete products for residential paving, safety, and design.",
-      image: "https://images.pexels.com/photos/280221/pexels-photo-280221.jpeg",
-      color: "bg-gradient-to-br from-purple-500 to-purple-600",
-      products: ["Paver Blocks", "Interlocking Tiles", "Concrete Walls", "Decorative Jalis", "Boundary Walls"]
-    },
-    {
-      id: 6,
-      title: "Other Commercial Sectors",
-      description: "Concrete products used in public spaces, parking areas, parks, and commercial sites.",
-      image: "https://images.pexels.com/photos/15893881/pexels-photo-15893881.jpeg",
-      color: "bg-gradient-to-br from-gray-700 to-gray-800",
-      products: ["Concrete Planters", "Tree Guards", "Bollards", "Wheel Stoppers", "Jersey Barriers"]
-    }
-  ];
+const applications = [
+  {
+    id: 1,
+    title: "Roadways",
+    description:
+      "Precast concrete products are widely used in road infrastructure for safety, drainage, pavement edging, and traffic management, ensuring durability and long service life.",
+    image: "https://images.pexels.com/photos/12181725/pexels-photo-12181725.jpeg",
+    color: "bg-gradient-to-br from-orange-500 to-orange-600",
+    products: ["Kerb Stones", "RCC Pipes", "Saucer Drains", "Milestones", "Sign Boards"]
+  },
+  {
+    id: 2,
+    title: "Railways",
+    description:
+      "High-strength precast concrete solutions support railway platforms, drainage, and safety systems, designed to withstand heavy loads and continuous operations.",
+    image: "https://images.jdmagicbox.com/quickquotes/images_main/rcc-railway-platform-copping-2216470148-5e6syghb.jpg",
+    color: "bg-gradient-to-br from-blue-500 to-blue-600",
+    products: ["Concrete Boards", "Route Markers", "Drain Covers", "RCC Pipes", "Railway Tiles"]
+  },
+  {
+    id: 3,
+    title: "Telecommunication",
+    description:
+      "Concrete products provide secure protection and organized routing for optical fibre and cable networks, ensuring easy maintenance and long-term reliability.",
+    image: "https://images.pexels.com/photos/2352277/pexels-photo-2352277.jpeg",
+    color: "bg-gradient-to-br from-green-500 to-green-600",
+    products: ["RCC Pipes", "Manhole Chambers", "Route Markers", "Trench Covers", "Cable Covers"]
+  },
+  {
+    id: 4,
+    title: "Water Industry",
+    description:
+      "Precast concrete solutions are used for water supply, drainage, and sewage systems, offering leak-proof performance and structural strength.",
+    image: "https://www.brhcpipes.com/images/applications/4.BRHC.Water-Supply.jpg",
+    color: "bg-gradient-to-br from-teal-500 to-teal-600",
+    products: ["Precast Pipes", "Manhole Systems", "Drainage Channels", "Sewage Pipes", "Water Tanks"]
+  },
+  {
+    id: 5,
+    title: "Housing",
+    description:
+      "Residential projects use precast concrete products for paving, boundaries, and decorative elements, combining strength with modern aesthetics.",
+    image: "https://images.pexels.com/photos/280221/pexels-photo-280221.jpeg",
+    color: "bg-gradient-to-br from-purple-500 to-purple-600",
+    products: ["Paver Blocks", "Interlocking Tiles", "Concrete Walls", "Decorative Jalis", "Boundary Walls"]
+  },
+  {
+    id: 6,
+    title: "Other Commercial Sectors",
+    description:
+      "Precast concrete products support commercial spaces with solutions for parking, safety, landscaping, and traffic control with minimal maintenance.",
+    image: "https://images.pexels.com/photos/15893881/pexels-photo-15893881.jpeg",
+    color: "bg-gradient-to-br from-gray-700 to-gray-800",
+    products: ["Concrete Planters", "Tree Guards", "Bollards", "Wheel Stoppers", "Jersey Barriers"]
+  }
+];
+
+
 
   return (
     <section id="applications" className="mt-10 py-16 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
