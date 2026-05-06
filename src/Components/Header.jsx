@@ -33,7 +33,7 @@ const Header = () => {
               }`}>
               {/* Logo Container with Gradient Border */}
               <div>
-                <img className='h-8 w-10' src="https://cdn-icons-png.flaticon.com/128/2823/2823437.png" alt="" />
+                <img className='h-8 w-10' src="https://cdn-icons-png.flaticon.com/128/2823/2823437.png" alt="Laddha Precast Industries logo" />
               </div>
               {/* Decorative Glow Effect */}
               <div className={`absolute inset-0 rounded-2xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500 ${isScrolled ? 'bg-orange-500' : 'bg-orange-400'
@@ -52,7 +52,7 @@ const Header = () => {
                   ? 'text-orange-600'
                   : 'text-orange-400'
                 }`}>
-                Qulity You Measure, Strength You Trust
+                Quality You Measure, Strength You Trust
               </span>
             </div>
           </a>

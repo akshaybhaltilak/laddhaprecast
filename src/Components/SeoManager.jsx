@@ -2,7 +2,8 @@ import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
 const SITE_URL = 'https://www.laddhaprecast.co.in'
-const DEFAULT_IMAGE = 'https://www.laddhaprecast.co.in/vite.svg'
+const DEFAULT_IMAGE = 'https://www.laddhaprecast.co.in/yash.png'
+const SITE_NAME = 'Laddha Precast Industries'
 
 const routeSeo = {
   '/': {
@@ -42,6 +43,12 @@ const routeSeo = {
       'Contact Laddha Precast Industries in Akola for RCC pipes, box culverts and precast concrete products. Call +91 9021133383 or email laddhaprecast@gmail.com.',
     keywords: 'contact laddha precast, precast in akola contact, rcc pipes manufacturer contact',
   },
+  '/case-study': {
+    title: 'Case Studies | Laddha Precast Industries',
+    description:
+      'Explore practical case studies of precast concrete solutions delivered by Laddha Precast Industries for infrastructure and construction projects.',
+    keywords: 'precast case studies, rcc pipe project case study, infrastructure precast solutions',
+  },
 }
 
 const setMeta = (name, content, isProperty = false) => {
@@ -61,28 +68,47 @@ const setMeta = (name, content, isProperty = false) => {
   tag.setAttribute('content', content)
 }
 
+const setJsonLd = (id, data) => {
+  let script = document.getElementById(id)
+  if (!script) {
+    script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.id = id
+    document.head.appendChild(script)
+  }
+  script.textContent = JSON.stringify(data)
+}
+
 const SeoManager = () => {
   const location = useLocation()
 
   useEffect(() => {
     const seo = routeSeo[location.pathname] || routeSeo['/']
     const canonicalUrl = `${SITE_URL}${location.pathname === '/' ? '' : location.pathname}`
+    const pageName =
+      location.pathname === '/'
+        ? 'Home'
+        : location.pathname.replace('/', '').replace('-', ' ').replace(/\b\w/g, (c) => c.toUpperCase())
 
     document.title = seo.title
     setMeta('description', seo.description)
     setMeta('keywords', seo.keywords)
     setMeta('robots', 'index, follow')
+    setMeta('googlebot', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1')
 
     setMeta('og:title', seo.title, true)
     setMeta('og:description', seo.description, true)
     setMeta('og:type', 'website', true)
     setMeta('og:url', canonicalUrl, true)
     setMeta('og:image', DEFAULT_IMAGE, true)
+    setMeta('og:site_name', SITE_NAME, true)
+    setMeta('og:locale', 'en_IN', true)
 
     setMeta('twitter:card', 'summary_large_image')
     setMeta('twitter:title', seo.title)
     setMeta('twitter:description', seo.description)
     setMeta('twitter:image', DEFAULT_IMAGE)
+    setMeta('twitter:site', '@laddhaprecast')
 
     let canonical = document.head.querySelector('link[rel="canonical"]')
     if (!canonical) {
@@ -91,6 +117,59 @@ const SeoManager = () => {
       document.head.appendChild(canonical)
     }
     canonical.setAttribute('href', canonicalUrl)
+
+    let hreflang = document.head.querySelector('link[rel="alternate"][hreflang="en-IN"]')
+    if (!hreflang) {
+      hreflang = document.createElement('link')
+      hreflang.setAttribute('rel', 'alternate')
+      hreflang.setAttribute('hreflang', 'en-IN')
+      document.head.appendChild(hreflang)
+    }
+    hreflang.setAttribute('href', canonicalUrl)
+
+    setJsonLd('website-schema', {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: SITE_NAME,
+      url: SITE_URL,
+      inLanguage: 'en-IN',
+    })
+
+    setJsonLd('organization-schema', {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: SITE_NAME,
+      url: SITE_URL,
+      logo: DEFAULT_IMAGE,
+      contactPoint: [
+        {
+          '@type': 'ContactPoint',
+          telephone: '+91-9021133383',
+          contactType: 'customer service',
+          areaServed: 'IN',
+          availableLanguage: ['en', 'hi', 'mr'],
+        },
+      ],
+    })
+
+    setJsonLd('breadcrumb-schema', {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: SITE_URL,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: pageName,
+          item: canonicalUrl,
+        },
+      ],
+    })
   }, [location.pathname])
 
   return null

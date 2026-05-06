@@ -9,11 +9,11 @@ const Footer = () => {
           <div>
             <div className="flex items-center mb-6 group">
              <div>
-                <img className='h-10 w-10' src="https://cdn-icons-png.flaticon.com/128/2823/2823437.png" alt="" />
+                <img className='h-10 w-10' src="https://cdn-icons-png.flaticon.com/128/2823/2823437.png" alt="Laddha Precast Industries logo" />
               </div>
               <div className="ml-4">
                 <div className="text-xl font-bold text-white">Laddha Precast Industries</div>
-                <div className="text-xs text-orange-400 ">Qulity You Measure, Strength You Trust</div>
+                <div className="text-xs text-orange-400 ">Quality You Measure, Strength You Trust</div>
               </div>
             </div>
 
@@ -146,7 +146,9 @@ const Footer = () => {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Phone Numbers</p>
-                  <p className="text-gray-200 font-semibold text-sm">Mobile: 9021133383/ 9326883297</p>
+                  <p className="text-gray-200 font-semibold text-sm">
+                    Mobile: <a href="tel:+919021133383" className="hover:text-orange-400">+91 9021133383</a> / <a href="tel:+919326883297" className="hover:text-orange-400">+91 9326883297</a>
+                  </p>
                 </div>
               </div>
 
@@ -159,7 +161,7 @@ const Footer = () => {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">WhatsApp</p>
-                  <p className="text-gray-200 font-semibold">+91 9021133383</p>
+                  <p className="text-gray-200 font-semibold"><a href="https://wa.me/919021133383" target="_blank" rel="noopener noreferrer" className="hover:text-orange-400">+91 9021133383</a></p>
                 </div>
               </div>
 
@@ -172,7 +174,7 @@ const Footer = () => {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Email</p>
-                  <p className="text-gray-200 font-semibold">laddhaprecast@gmail.com</p>
+                  <p className="text-gray-200 font-semibold"><a href="mailto:laddhaprecast@gmail.com" className="hover:text-orange-400">laddhaprecast@gmail.com</a></p>
                 </div>
               </div>
             </div>

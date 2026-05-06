@@ -58,7 +58,7 @@ const Contact = () => {
                   <div className="space-y-2">
                    
                     <div>
-                      <p className="text-gray-700 font-medium">Mobile: 9021133383/ 9326883297</p>
+                      <p className="text-gray-700 font-medium">Mobile: <a href="tel:+919021133383" className="text-orange-600 hover:text-orange-700">+91 9021133383</a> / <a href="tel:+919326883297" className="text-orange-600 hover:text-orange-700">+91 9326883297</a></p>
                       <p className="text-gray-600 text-sm">Direct Contact</p>
                     </div>
                   </div>
@@ -74,7 +74,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-xl font-semibold text-gray-800 mb-2">WhatsApp</h4>
-                  <p className="text-gray-700 font-medium">+91 9021133383</p>
+                  <p className="text-gray-700 font-medium"><a href="https://wa.me/919021133383" target="_blank" rel="noopener noreferrer" className="text-green-700 hover:text-green-800">+91 9021133383</a></p>
                   <p className="text-gray-600 mt-1">Quick responses for business inquiries</p>
                 </div>
               </div>
@@ -88,7 +88,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-xl font-semibold text-gray-800 mb-2">Email</h4>
-                  <p className="text-gray-700 font-medium">laddhaprecast@gmail.com</p>
+                  <p className="text-gray-700 font-medium"><a href="mailto:laddhaprecast@gmail.com" className="text-orange-600 hover:text-orange-700">laddhaprecast@gmail.com</a></p>
                   <p className="text-gray-600 mt-1">Send us your requirements and inquiries</p>
                 </div>
               </div>

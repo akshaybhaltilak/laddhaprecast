@@ -178,18 +178,18 @@ const Home = () => {
 
                 {/* CTA Buttons */}
                 <div className="flex flex-wrap gap-4 pt-4">
-                  <button className="group px-8 py-4 bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-500 hover:to-orange-600 text-white font-semibold rounded-xl shadow-2xl shadow-orange-900/50 transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 border border-orange-400/30">
+                  <a href="/products" className="group inline-flex px-8 py-4 bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-500 hover:to-orange-600 text-white font-semibold rounded-xl shadow-2xl shadow-orange-900/50 transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 border border-orange-400/30">
                     <span className="flex items-center gap-2">
                       Explore Products
                       <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
                     </span>
-                  </button>
+                  </a>
 
-                  <button className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold rounded-xl border-2 border-white/30 hover:border-orange-400/50 transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 shadow-xl">
+                  <a href="/contact" className="inline-flex px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold rounded-xl border-2 border-white/30 hover:border-orange-400/50 transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 shadow-xl">
                     Request Quote
-                  </button>
+                  </a>
                 </div>
               </div>
 
@@ -339,9 +339,9 @@ const Home = () => {
                       </div>
 
                       {/* CTA Button */}
-                      <button className="w-full mt-4 px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold rounded-xl transition-all duration-300 transform group-hover:scale-105 shadow-md hover:shadow-lg">
+                      <a href="/products" className="inline-flex justify-center w-full mt-4 px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold rounded-xl transition-all duration-300 transform group-hover:scale-105 shadow-md hover:shadow-lg">
                         View Product Details
-                      </button>
+                      </a>
                     </div>
                   </div>
                 ))}
@@ -360,9 +360,9 @@ const Home = () => {
                     We offer a comprehensive range of premium precast concrete products including RCC Pipes, U-Drains,
                     Box Culverts, and custom engineering solutions for all your construction and infrastructure requirements.
                   </p>
-                  <button className="px-10 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+                  <a href="/products" className="inline-flex px-10 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
                     Browse All Products
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
