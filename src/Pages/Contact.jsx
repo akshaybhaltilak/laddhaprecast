@@ -6,7 +6,7 @@ const Contact = () => {
     <section id="contact" className="py-24 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Get In Touch</h2>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Get In Touch</h1>
           <div className="w-24 h-1.5 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full"></div>
           <p className="text-xl text-gray-600 mt-6 max-w-2xl mx-auto">
             Ready to discuss your precast concrete requirements? Contact us today for a free consultation

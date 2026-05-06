@@ -74,9 +74,9 @@ const applications = [
               OUR APPLICATIONS
             </span>
           </div> */}
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Industry <span className="bg-gradient-to-r from-orange-500 to-orange-700 bg-clip-text text-transparent">Applications</span>
-          </h2>
+          </h1>
           <div className="w-20 h-1.5 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full mb-6"></div>
           <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
             Reinforced precast concrete products owing to their various properties like high tensile strength,

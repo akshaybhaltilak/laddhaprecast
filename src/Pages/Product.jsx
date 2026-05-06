@@ -69,9 +69,9 @@ const Products = () => {
       <div className="container mx-auto px-4 relative z-10 mt-10">
         {/* Heading */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
             Our Products
-          </h2>
+          </h1>
           <div className="w-24 h-1.5 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full"></div>
           <p className="text-xl text-slate-600 mt-6 max-w-2xl mx-auto">
             Premium quality reinforced precast concrete products for infrastructure development

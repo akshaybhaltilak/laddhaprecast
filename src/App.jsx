@@ -8,11 +8,13 @@ import About from './Pages/About'
 import Applications from './Pages/Applications'
 import Clients from './Pages/Clients'
 import Contact from './Pages/Contact'
+import SeoManager from './Components/SeoManager'
 import './App.css'
 
 function App() {
   return (
     <Router>
+      <SeoManager />
       <div className="App">
         <Header />
         <Routes>

@@ -57,6 +57,39 @@ const Home = () => {
     setImageLoaded(prev => ({ ...prev, [index]: true }));
   };
 
+  useEffect(() => {
+    const localBusinessSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'LocalBusiness',
+      name: 'Laddha Precast Industries',
+      image: 'https://www.laddhaprecast.co.in/vite.svg',
+      url: 'https://www.laddhaprecast.co.in/',
+      telephone: '+91-9021133383',
+      email: 'laddhaprecast@gmail.com',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Laddha Villa, Plot No. 90, Birla Colony, Jatharpeth',
+        addressLocality: 'Akola',
+        addressRegion: 'Maharashtra',
+        postalCode: '444005',
+        addressCountry: 'IN'
+      },
+      areaServed: ['Akola', 'Maharashtra'],
+      description:
+        'Laddha Precast Industries is a precast concrete manufacturer in Akola offering RCC pipes, box culverts, U drains and allied products.'
+    };
+
+    let schemaTag = document.getElementById('local-business-schema');
+    if (!schemaTag) {
+      schemaTag = document.createElement('script');
+      schemaTag.type = 'application/ld+json';
+      schemaTag.id = 'local-business-schema';
+      document.head.appendChild(schemaTag);
+    }
+
+    schemaTag.textContent = JSON.stringify(localBusinessSchema);
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
       {/* Hero Section */}
@@ -118,7 +151,7 @@ const Home = () => {
 
                 {/* Subtitle */}
                 <p className="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl">
-                  Premium quality reinforced concrete pipes, box culverts, and allied precast products engineered for
+                  Leading precast manufacturer in Akola delivering premium reinforced concrete pipes, box culverts, and allied products engineered for
                   <span className="text-orange-400 font-semibold"> durability</span>,
                   <span className="text-orange-300 font-semibold"> strength</span>, and
                   <span className="text-white font-semibold"> excellence</span> in every construction project.

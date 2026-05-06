@@ -12,9 +12,9 @@ const About = () => {
         {/* Page Header */}
         <div className="text-center mb-2 mt-30 animate-fade-in">
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-2 ">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-2 ">
             About <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Laddha Precast Industries</span>
-          </h2>
+          </h1>
           <div className="w-24 h-1.5 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full mb-2"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Legacy of excellence in precast concrete manufacturing since 1982
